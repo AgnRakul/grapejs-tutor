@@ -5,18 +5,31 @@ import "../../main.scss"
 
 const GrapeEditor = () => {
 
-  const [editor, setEditor] = useState(null);
+  const [editor, setEditor] = useState()
 
   useEffect(() => {
+
     const editor = grapesjs.init({
       container: "#editor",
     });
-    setEditor(editor);
+  
+    editor.BlockManager.add('h1-block', {
+      label: 'H1 Block',
+      content: '<h1>Put your title here</h1>',
+      category: 'Basic',
+      attributes: {
+        title: 'Insert h1 block'
+      }
+    })
+    
   }, [])
+
 
   return (
     <div className='App'>
-      <div id="editor"></div>
+      <div id="editor">
+
+      </div>
     </div>
   )
 }
