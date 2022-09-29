@@ -1,0 +1,18 @@
+{
+    "tagName": "h1",
+    "type": "text",
+    "_undoexc": [
+        "status",
+        "open"
+    ],
+    "components": [
+        {
+            "type": "textnode",
+            "content": "Put your title here",
+            "_undoexc": [
+                "status",
+                "open"
+            ]
+        }
+    ]
+}

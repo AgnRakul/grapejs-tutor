@@ -15,12 +15,23 @@ const GrapeEditor = () => {
   
     editor.BlockManager.add('h1-block', {
       label: 'H1 Block',
-      content: '<h1>Put your title here</h1>',
+      content: '<h1 h1block=true>Put your title here</h1>',
       category: 'Basic',
       attributes: {
         title: 'Insert h1 block'
       }
     })
+
+    editor.on('component:add', e => {
+      let $view = e.view;
+      console.log($view);
+  
+      if($view.attr.id.h1block === 'true') {
+        $view.remove();
+        alert('Component Already Exist')
+      } 
+    })
+
     
   }, [])
 
