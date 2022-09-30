@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import 'grapesjs/dist/css/grapes.min.css';
 import grapesjs from 'grapesjs';
 import "../../main.scss"
 
 const GrapeEditor = () => {
-
-  const [editor, setEditor] = useState()
 
   useEffect(() => {
 
@@ -13,26 +11,37 @@ const GrapeEditor = () => {
       container: "#editor",
     });
   
-    editor.BlockManager.add('h1-block', {
-      label: 'H1 Block',
-      content: '<h1 h1block=true>Put your title here</h1>',
+    editor.BlockManager.add('h1-block', {  
+      label: 'H1-Block',
+      content: '<h1>Hai</h1>',
       category: 'Basic',
-      attributes: {
-        title: 'Insert h1 block'
-      }
     })
 
-    editor.on('component:add', e => {
-      let $view = e.view;
-      console.log($view);
-  
-      if($view.attr.id.h1block === 'true') {
-        $view.remove();
-        alert('Component Already Exist')
-      } 
+    editor.on('component:add', component => {  // Adding the Component Actions
+      const tag = component.get('tagName')
+      if (tag === 'h1') {
+          if (editor.getComponents().filter(comp => comp.get('tagName') === tag).length > 2) {
+              alert("Component is already there")
+              component.remove()
+          }
+      }
+  })
+
+    editor.on('component:clone', clone => { // Cloning the Components
+
+      console.log("Cloning the Component", clone);
+    })
+
+    editor.on('component:create', create =>{ // Creating the Components the Create and Update Act like same
+      console.log("Creating",create);
+    })
+
+    editor.on('component:update',update => { // While Selecting the Component the Update Method Triggers and while updated the Create Method Triggers
+      console.log("Updating",update);
     })
 
     
+
   }, [])
 
 
