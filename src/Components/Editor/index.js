@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import 'grapesjs/dist/css/grapes.min.css';
 import grapesjs from 'grapesjs';
 import "../../main.scss"
+import { showToast } from '../../CustomToast/toast';
 
 const GrapeEditor = () => {
 
@@ -21,25 +22,38 @@ const GrapeEditor = () => {
       const tag = component.get('tagName')
       if (tag === 'h1') {
           if (editor.getComponents().filter(comp => comp.get('tagName') === tag).length > 2) {
-              alert("Component is already there")
               component.remove()
+              showToast('warning','Component is already there')
+              
           }
       }
   })
 
     editor.on('component:clone', clone => { // Cloning the Components
 
-      console.log("Cloning the Component", clone);
+      showToast('info','Cloning Method Triggers')
     })
 
     editor.on('component:create', create =>{ // Creating the Components the Create and Update Act like same
-      console.log("Creating",create);
+      
+      showToast('info','Creating Method Triggers')
     })
 
     editor.on('component:update',update => { // While Selecting the Component the Update Method Triggers and while updated the Create Method Triggers
-      console.log("Updating",update);
+      showToast('info','Updating Method Triggers')
     })
 
+    editor.on('component:deselected', deselected => {
+      showToast('info','deselected Method Triggers')
+    })
+
+    editor.on('component:selected', selected => {
+      showToast('info','selected Method Triggers')
+    })
+
+    // editor.on('component:toggled', toggled => {
+    //   showToast('info','toggled Method Triggers')
+    // })
     
 
   }, [])
