@@ -10,14 +10,19 @@ const GrapeEditor = () => {
 
     const editor = grapesjs.init({
       container: "#editor",
+      blockManager: {
+        appendTo: '#blocks',
+        blocks: [
+          {
+            id: 'H1-Block', // id is mandatory
+            label: '<b>H1-Block</b>', // You can use HTML/SVG inside labels
+            attributes: { class:'gjs-block-section' },
+            content: `<h1>Hai</h1>`,
+          }
+        ]
+      },
     });
   
-    editor.BlockManager.add('h1-block', {  
-      label: 'H1-Block',
-      content: '<h1>Hai</h1>',
-      category: 'Basic',
-    })
-
     editor.on('component:add', component => {  // Adding the Component Actions
       const tag = component.get('tagName')
       if (tag === 'h1') {
@@ -28,34 +33,6 @@ const GrapeEditor = () => {
           }
       }
   })
-
-    editor.on('component:clone', clone => { // Cloning the Components
-
-      showToast('info','Cloning Method Triggers')
-    })
-
-    editor.on('component:create', create =>{ // Creating the Components the Create and Update Act like same
-      
-      showToast('info','Creating Method Triggers')
-    })
-
-    editor.on('component:update',update => { // While Selecting the Component the Update Method Triggers and while updated the Create Method Triggers
-      showToast('info','Updating Method Triggers')
-    })
-
-    editor.on('component:deselected', deselected => {
-      showToast('info','deselected Method Triggers')
-    })
-
-    editor.on('component:selected', selected => {
-      showToast('info','selected Method Triggers')
-    })
-
-    // editor.on('component:toggled', toggled => {
-    //   showToast('info','toggled Method Triggers')
-    // })
-    
-
   }, [])
 
 
