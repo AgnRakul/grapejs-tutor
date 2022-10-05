@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import 'grapesjs/dist/css/grapes.min.css';
 import grapesjs from 'grapesjs';
 import "../../main.scss"
+import _get from "lodash/get";
+import _map from "lodash/map";
 import { showToast } from '../../CustomToast/toast';
 
 const GrapeEditor = () => {
@@ -10,29 +12,36 @@ const GrapeEditor = () => {
 
     const editor = grapesjs.init({
       container: "#editor",
-      blockManager: {
-        appendTo: '#blocks',
-        blocks: [
-          {
-            id: 'H1-Block', // id is mandatory
-            label: '<b>H1-Block</b>', // You can use HTML/SVG inside labels
-            attributes: { class:'gjs-block-section' },
-            content: `<h1>Hai</h1>`,
-          }
-        ]
-      },
     });
-  
-    editor.on('component:add', component => {  // Adding the Component Actions
-      const tag = component.get('tagName')
-      if (tag === 'h1') {
-          if (editor.getComponents().filter(comp => comp.get('tagName') === tag).length > 2) {
-              component.remove()
-              showToast('warning','Component is already there')
-              
-          }
+
+    editor.BlockManager.add('h1-block', {
+      label: 'Heading',
+      content: '<h1 id="h1Block">Put your title here</h1>',
+      category: 'Basic',
+      attributes: {
+        
+        title: 'Insert h1 block'
       }
-  })
+    })
+
+    const getAllComponents = (model, result = []) => {
+      result.push(model);
+      model.components().each(mod => getAllComponents(mod, result));
+      return result;
+    };
+  
+    editor.on("component:add", function (e) {
+      const all = getAllComponents(editor.DomComponents.getWrapper());
+     
+      
+      const findBlock = all.map((info) => {
+
+        return info.ccid;
+      })
+      console.log(findBlock);
+
+    });
+
   }, [])
 
 
