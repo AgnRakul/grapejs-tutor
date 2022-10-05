@@ -19,7 +19,7 @@ const GrapeEditor = () => {
       content: '<h1 id="h1Block">Put your title here</h1>',
       category: 'Basic',
       attributes: {
-        
+
         title: 'Insert h1 block'
       }
     })
@@ -29,16 +29,25 @@ const GrapeEditor = () => {
       model.components().each(mod => getAllComponents(mod, result));
       return result;
     };
-  
+
     editor.on("component:add", function (e) {
       const all = getAllComponents(editor.DomComponents.getWrapper());
-     
-      
+
+
       const findBlock = all.map((info) => {
 
+        // if (info.includes('h1Block')) {
+        //   return info
+        // } else if (info.ccid !== 'h1Block' && info.includes('h1Block')) {
+        //   e.remove()
+        // }
         return info.ccid;
       })
-      console.log(findBlock);
+
+       if(findBlock.includes('h1Block')) {
+          return e;
+       } else if( )
+
 
     });
 
