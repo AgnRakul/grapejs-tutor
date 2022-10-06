@@ -38,10 +38,7 @@ export const Blocks = [
         }
         </style>
         </head>
-        
-        
-        <section id="Template-One" class="popup-graybox">
-            <div class="freedownloads-popup-sec" style="background: #8e8e41 url(images/freedownloads.jpg) no-repeat center center;background-size: cover;" >
+            <div id="Template-One" class="freedownloads-popup-sec" style="background: #8e8e41 url(images/freedownloads.jpg) no-repeat center center;background-size: cover;" >
             <h2 data-edit="text" >Free Design Downloads</h2>
             <h4 data-edit="text" >Unlimited Free Downloads Of Brochures<br>
                 Flyers, Postcards and much more...</h4>
@@ -52,7 +49,6 @@ export const Blocks = [
             <h6 data-edit="text" >* Terms and Conditions Apply</h6>
             <button class="freedownloads-cls-btn close-btn">X</button>
             </div>
-        </section>
         `,
         category: "Templates",
         attributes: {
@@ -104,10 +100,8 @@ export const Blocks = [
         }
         </style>
         </head>
-        
 
-        <section id="Template-One" class="popup-graybox">
-        <div class="coupon-popup-sec" >
+        <div id="Template-One" class="coupon-popup-sec" >
           <div class="coupon-content" style="background: #000 url(images/freetrial_popup.jpg) no-repeat top left;background-size: cover;">
             <h4>start a free trial now</h4>
               <div class="main_content">
@@ -124,8 +118,7 @@ export const Blocks = [
             <button class="coupon-cls-btn close-btn" >X</button>
             <p>ready to start your 30 days free trial?</p>
           </div>
-        </div>
-        </section>`,
+        </div>`,
         category: "Templates",
         attributes: {
             title: "Template Two"

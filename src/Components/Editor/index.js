@@ -1,15 +1,22 @@
-import React, { useEffect } from 'react'
+import React, {useState, useEffect } from 'react'
 import 'grapesjs/dist/css/grapes.min.css';
 import grapesjs from 'grapesjs';
 import "../../main.scss"
 import _get from "lodash/get";
 import _map from "lodash/map";
-import {Blocks} from "../../Blocks"
+import { Blocks } from "../../Blocks"
 import { showToast } from '../../CustomToast/toast';
+import juice from 'juice';
 
 const GrapeEditor = () => {
 
+  const [html, sethtml] = useState();
+  // console.log("🚀 ~ file: index.js ~ line 13 ~ GrapeEditor ~ html", html)
+  const [css, setcss] = useState();
+  // console.log("🚀 ~ file: index.js ~ line 15 ~ GrapeEditor ~ css", css)
+
   useEffect(() => {
+    
 
     const editor = grapesjs.init({
       container: "#editor",
@@ -25,20 +32,10 @@ const GrapeEditor = () => {
 
     })
 
-    const getAllComponents = (model, result = []) => {
-      result.push(model);
-      model.components().each(mod => getAllComponents(mod, result));
-      return result;
-    };
-
-  
-
     editor.on("component:add", function (e) {
       const all = getAllComponents(editor.DomComponents.getWrapper());
 
-      console.log(editor.DomComponents.getWrapper());
-
-      const findBlock = all.map((info) => {
+      all.map((info) => {
 
         Blocks.map((val) => {
 
@@ -47,17 +44,36 @@ const GrapeEditor = () => {
             showToast('info', 'Remove the Existing Templates')
             return
           }
-          
+
         })
 
-        
       })
 
+      var html = editor.getHtml();
+      var css = editor.getCss();
+      CombineHtmlCss();
+  
+      setcss(css)
+      sethtml(html);
     });
 
-   
-
   }, [])
+
+
+  // Get All Components from Canvas
+  const getAllComponents = (model, result = []) => {
+    result.push(model);
+    model.components().each(mod => getAllComponents(mod, result));
+    return result;
+  };
+
+  // Combine Html and Css
+  const CombineHtmlCss = () => {
+    
+    const final = juice.inlineContent(html, css);
+    console.log(final);
+
+  }
 
 
   return (
