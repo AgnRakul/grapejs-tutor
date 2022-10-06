@@ -44,7 +44,7 @@ const GrapeEditor = () => {
 
           if (info.ccid !== val.id && info.ccid.includes(val.id)) {
             e.remove()
-            showToast('info', 'Component already Added')
+            showToast('info', 'Remove the Existing Templates')
             return
           }
           
