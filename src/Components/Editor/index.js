@@ -4,6 +4,7 @@ import grapesjs from 'grapesjs';
 import "../../main.scss"
 import _get from "lodash/get";
 import _map from "lodash/map";
+import {Blocks} from "../../Blocks"
 import { showToast } from '../../CustomToast/toast';
 
 const GrapeEditor = () => {
@@ -14,14 +15,14 @@ const GrapeEditor = () => {
       container: "#editor",
     });
 
-    editor.BlockManager.add('h1-block', {
-      label: 'Heading',
-      content: '<h1 id="h1Block">Put your title here</h1>',
-      category: 'Basic',
-      attributes: {
+    Blocks.map((blocks) => {
+      return editor.BlockManager.add(blocks.id, {
+        label: blocks.label,
+        content: blocks.content,
+        category: blocks.category,
+        attributes: blocks.attributes
+      })
 
-        title: 'Insert h1 block'
-      }
     })
 
     const getAllComponents = (model, result = []) => {
@@ -30,26 +31,31 @@ const GrapeEditor = () => {
       return result;
     };
 
+  
+
     editor.on("component:add", function (e) {
       const all = getAllComponents(editor.DomComponents.getWrapper());
 
+      console.log(editor.DomComponents.getWrapper());
 
       const findBlock = all.map((info) => {
 
-        // if (info.includes('h1Block')) {
-        //   return info
-        // } else if (info.ccid !== 'h1Block' && info.includes('h1Block')) {
-        //   e.remove()
-        // }
-        return info.ccid;
+        Blocks.map((val) => {
+
+          if (info.ccid !== val.id && info.ccid.includes(val.id)) {
+            e.remove()
+            showToast('info', 'Component already Added')
+            return
+          }
+          
+        })
+
+        
       })
 
-       if(findBlock.includes('h1Block')) {
-          return e;
-       } else if( )
-
-
     });
+
+   
 
   }, [])
 
