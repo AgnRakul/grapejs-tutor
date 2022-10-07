@@ -6,6 +6,8 @@ import { showToast } from './CustomToast/toast';
 import juice from 'juice';
 import "./styles/editor.css"
 import Input from './FunctionalUI/Input';
+import jQuery from 'jquery';
+import { EditorStyle } from './style';
 
 const editor = grapesjs.init({
     container: '#gjs',
@@ -27,7 +29,7 @@ const getHtmlCssAsLine = () => {
     var html = editor.getHtml();
     var css = editor.getCss();
     const final = juice.inlineContent(html, css);
-    console.log(final);
+
 }
 
 editor.on("component:add", function (e) {
@@ -47,4 +49,36 @@ editor.on("component:add", function (e) {
         })
 
     })
+});
+
+editor.DomComponents.addType('div', {
+    isComponent: el => el.tagName == 'DIV',
+    model: {
+      defaults: {
+        traits: [
+          // Strings are automatically converted to text types
+          {
+            type: 'select', // Type of the trait
+            label: 'Type', // The label you will see in Settings
+            name: 'type', // The name of the attribute/property to use on component
+            options: [
+              { id: 'top-center', name: 'TopCenter'},
+              { id: 'top-right', name: 'TopRight'},
+              { id: 'top-left', name: 'TopLeft'},
+              { id: 'center', name: 'Center'},
+              { id: 'center-left', name: 'CenterLeft'},
+              { id: 'center-right', name: 'CenterRight'},
+              { id: 'bottom-center', name: 'BottomCenter'},
+              { id: 'bottom-right', name: 'BottomRight'},
+              { id: 'bottom-left', name: 'BottomLeft'},
+            ]
+          }
+          
+        ],
+       
+        // As by default, traits are binded to attributes, so to define
+        // their initial value we can use attributes
+      },
+    },
+    
 });
