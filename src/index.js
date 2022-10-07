@@ -5,9 +5,11 @@ import { TemplateBlocks } from './Blocks/TemplateBlocks';
 import { showToast } from './CustomToast/toast';
 import juice from 'juice';
 import "./styles/editor.css"
+import { get } from 'lodash';
 import Input from './FunctionalUI/Input';
 import jQuery from 'jquery';
 import { EditorStyle } from './style';
+import { toHaveStyle } from '@testing-library/jest-dom/dist/matchers';
 
 const editor = grapesjs.init({
     container: '#gjs',
@@ -59,7 +61,7 @@ editor.DomComponents.addType('div', {
           // Strings are automatically converted to text types
           {
             type: 'select', // Type of the trait
-            label: 'Type', // The label you will see in Settings
+            label: 'Position', // The label you will see in Settings
             name: 'type', // The name of the attribute/property to use on component
             options: [
               { id: 'top-center', name: 'TopCenter'},
@@ -75,10 +77,87 @@ editor.DomComponents.addType('div', {
           }
           
         ],
-       
-        // As by default, traits are binded to attributes, so to define
-        // their initial value we can use attributes
+        
       },
+
+      init() {
+        this.on('change:attributes:type', this.handleTypeChange);
+      },
+  
+      handleTypeChange() {
+
+        let PositioningComponent = this.components();
+        let Position = PositioningComponent.parent.attributes.attributes.type
+
+        
+        switch (Position) {
+          case 'top-center': {
+            this.setStyle({
+              top: "0%",
+              left: "30%"
+            })
+            return 
+          }
+          case "top-left": {
+            this.setStyle({
+              top: "0%",
+              left: "0%"
+            })
+            return 
+          }
+          case "top-right": {
+            this.setStyle({
+              top: "0%",
+              right: "0%"
+            })
+            return 
+          }
+          case "center": {
+            this.setStyle({
+              top: "50%",
+              left: "30%"
+            })
+            return 
+          }
+          case "center-left": {
+            this.setStyle({
+              top: "20%",
+              left: "0%"
+            })
+            return 
+          }
+          case "center-right": {
+            this.setStyle({
+              top: "20%",
+              right: "0%"
+            })
+            return 
+          }
+          case "bottom-center": {
+            this.setStyle({
+              bottom: "0%",
+              left: "30%"
+            })
+            return 
+          }
+          case "bottom-right": {
+            this.setStyle({
+              bottom: "0%",
+              right: "0%"
+            })
+            return 
+          }
+          case "bottom-left": {
+            this.setStyle({
+              bottom: "0%",
+              left: "0%"
+            })
+            return 
+          }
+        }
+      
+      },
+
     },
     
 });
