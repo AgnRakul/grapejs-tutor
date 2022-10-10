@@ -1,0 +1,15 @@
+body {
+    padding: 0%;
+    margin: 0%;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+
+}
+
+.editor {
+    display: flex;
+    justify-content: space-between;
+}

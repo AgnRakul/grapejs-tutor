@@ -1,0 +1,62 @@
+[
+    {
+        "id": "templates",
+        "label": "Templates",
+        "Templates": [
+            {
+                "id": "Type 1",
+                "label": "Type 1",
+                "type": "template",
+                "template": "Type 1"
+            },
+            {
+                "id": "Type 1",
+                "label": "Type 1",
+                "type": "template",
+                "template": "Type 1"
+            },
+            {
+                "id": "Type 1",
+                "label": "Type 1",
+                "type": "template",
+                "template": "Type 1"
+            },
+            {
+                "id": "Type 1",
+                "label": "Type 1",
+                "type": "template",
+                "template": "Type 1"
+            }
+        ]
+    },
+    {
+        "id": "banners",
+        "label": "Banners",
+        "Templates": [
+            {
+                "id": "Type 1",
+                "label": "Type 1",
+                "type": "template",
+                "template": "Type 1"
+            },
+            {
+                "id": "Type 1",
+                "label": "Type 1",
+                "type": "template",
+                "template": "Type 1"
+            },
+            {
+                "id": "Type 1",
+                "label": "Type 1",
+                "type": "template",
+                "template": "Type 1"
+            },
+            {
+                "id": "Type 1",
+                "label": "Type 1",
+                "type": "template",
+                "template": "Type 1"
+            }
+        ]
+    }
+]
