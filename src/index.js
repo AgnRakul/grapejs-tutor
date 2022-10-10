@@ -1,10 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import grapesjs from "grapesjs"
+import "./main.scss"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const Editor =  grapesjs.init({
+  container: '#root',
+  storageManager: false,
+  height: '100%',
+
+  // noticeOnUnload: false,
+  blockManager: {
+    appendTo: '#blocks',
+  },
+  styleManager: {
+    appendTo: '#styles-container',
+  },
+  layerManager: {
+    appendTo: '#layers-container',
+  },
+  traitManager: {
+    appendTo: '#trait-container',
+  },
+  selectorManager: {
+    appendTo: '#styles-container',
+  },
+  deviceManager: {},
+  plugins: [],
+  pluginsOpts: {},
+});
