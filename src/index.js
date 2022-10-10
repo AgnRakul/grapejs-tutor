@@ -27,6 +27,7 @@ const getHtmlCssAsLine = () => {
   var html = editor.getHtml();
   var css = editor.getCss();
   const final = juice.inlineContent(html, css);
+  console.log(final);
 
 }
 
