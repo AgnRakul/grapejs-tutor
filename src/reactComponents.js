@@ -5,35 +5,30 @@ import { ButtonBlocks } from "./Blocks/ButtonBlocks";
 
 
 export const BasicReactComponents = (editor) => {
+    
 
-    TemplateBlocks.map((template) => {
-        return editor.BlockManager.add(template.id, {
-            label: template.label,
-            category: template.category,
-            content: template.content,
-        });
-
+    const bm = editor.BlockManager;
+    
+    /*MDB forms*/
+    bm.add('template', {
+        label: 'Templates',
+        content: {type: 'TEMPLATE'}
     })
+    /*MDB ecommerce*/
+    bm.add('banner', {
+        label: 'Banners',
+        content: {type: 'BANNERS'}
+    })
+    
 
-    // BasicBlocks.map((block) => {
-    //     return editor.BlockManager.add(block.id, {
-    //         label: block.label,
-    //         category: block.category,
-    //         content: block.content,
+    // TemplateBlocks.map((template) => {
+    //     return editor.BlockManager.add(template.id, {
+    //         label: template.label,
+    //         category: template.category,
+    //         content: template.content,
     //     });
 
     // })
-
-    
-
-    ButtonBlocks.map((btn) => {
-        return editor.BlockManager.add(btn.id, {
-            label: btn.label,
-            category: btn.category,
-            content: btn.content,
-        });
-    })
-
 
 
 }
