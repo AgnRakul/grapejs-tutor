@@ -6,6 +6,7 @@ import { TemplateBlocks } from './Blocks/TemplateBlocks';
 import { showToast } from './CustomToast/toast';
 import juice from 'juice';
 import { getPoistion } from "./utils/index";
+import jQuery from "jquery";
 
 
 const editor = grapesjs.init({
@@ -26,8 +27,7 @@ const getHtmlCssAsLine = () => {
 
   var html = editor.getHtml();
   var css = editor.getCss();
-  const final = juice.inlineContent(html, css);
-  console.log(final);
+  const final = juice.inlineContent(html, css)
 
 }
 
@@ -44,9 +44,7 @@ editor.on("component:add", function (e) {
         showToast('info', 'Remove the Existing Templates')
         return
       }
-
     })
-
   })
 });
 
@@ -87,7 +85,6 @@ editor.DomComponents.addType('div', {
 
       let PositionArray = ['top-center', 'top-right', 'top-left', 'center', 'center-left', 'center-right', 'bottom-center', 'bottom-right', 'bottom-left'];
 
-
       PositionArray.map((val) => {
         if (classList.includes(val)) {
           this.removeClass(val)
@@ -97,8 +94,14 @@ editor.DomComponents.addType('div', {
       const attributes = this.getAttributes();
       this.setClass(attributes.class + " " + position);
     },
-
   },
-
 });
 
+
+editor.on('load', e => {
+
+let asd =document.createElement("div")
+// asd.inner
+  jQuery('.gjs-pn-btn.fa.fa-th-large').append(<div></div>)
+
+})
