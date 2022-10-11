@@ -11,8 +11,19 @@
         background-color: beige;
 
         .gjs-caret-icon {
-           display: none;
+            display: none;
         }
-    
+
     }
+}
+
+.gjs-one-bg {
+    background-color: white;
+}
+.gjs-two-color {
+    color: black;
+}
+
+.gjs-selected {
+    outline: none;
 }

@@ -6,8 +6,6 @@ import { ButtonBlocks } from "./Blocks/ButtonBlocks";
 
 export const BasicReactComponents = (editor) => {
 
-    
-
     TemplateBlocks.map((template) => {
         return editor.BlockManager.add(template.id, {
             label: template.label,
