@@ -5,6 +5,7 @@ import Blocks from "../../Blocks.json"
 const SideBar = () => {
 
 
+    const [showBlock,setShowBlock] = useState(false);
     const [isSelected, setIsSelected] = useState(false)
     const [subBlockisSelected, setSubBlockIsSelected] = useState(false)
     const [selectedBlock, setselectedBlock] = useState('')
@@ -52,6 +53,8 @@ const SideBar = () => {
 
 
 
+
+
     return (
         <div className='sidebar' id='panels-container'>
             <BiMessageSquareAdd style={{
@@ -59,8 +62,8 @@ const SideBar = () => {
                 height: "40px",
                 cursor: "pointer",
                 marginTop: "30px"
-            }} />
-            <div className='menubar hide-menu '>
+            }} onClick={() => setShowBlock(!showBlock)} />
+            <div className={`menubar hide-menu ${showBlock && 'show'} `}>
                 <div className='menubar-topbar'>
                     <span>Add Element</span>
                 </div>

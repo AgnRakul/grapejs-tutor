@@ -34,6 +34,9 @@
     display: flex;
     justify-content: space-around
 }
+.show {
+    display: none;
+}
 
 .block-list {
     background-color: white;
