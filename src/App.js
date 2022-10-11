@@ -5,11 +5,7 @@ import SideBar from "./Components/SideBar/SideBar";
 function App() {
   return (
     <div className="app">
-        <TopBar/>
-        {/* <div className="editor-body" id="canvas-body">
-          <Canvas/>
-        </div> */}
-        <SideBar/>
+      <SideBar />
     </div>
   );
 }

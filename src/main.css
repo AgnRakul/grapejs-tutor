@@ -1,0 +1,90 @@
+.sidebar {
+    position: relative;
+    width: 20px;
+    height: 100vh;
+    padding: 20px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+
+}
+
+.menubar {
+
+    position: absolute;
+    left: 99%;
+    top: 6%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* z-index: -1; */
+    background-color: wheat;
+    width: 700px;
+    height: 80%;
+}
+
+.menubar-topbar {
+    width: 100%;
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 1px 9px 0px;
+    align-items: center;
+    height: 6%;
+     background-color: wheat;
+}
+
+.blocks {
+    display: flex;
+    justify-content: space-around
+}
+
+.block-list {
+    background-color: white;
+    padding: 2%;
+    width: 60%;
+    height: 735px;   
+}
+.blocklist-name {
+    cursor: pointer;
+}
+
+.sub-block {
+    display: flex;
+}
+
+.sub-block-type {
+ 
+    padding: 2%;
+    height: 735px;
+    width: 100%;
+}
+
+.category {
+    width: auto;
+    height: auto;
+    padding: 2%;
+    cursor: pointer;
+}
+
+.category:hover {
+    background-color: rgb(128, 146, 146);
+}
+
+.selected {
+    background-color: rgb(128, 146, 146);
+}
+
+.subcat {
+    width: auto;
+    height: auto;
+    padding: 2%;
+    cursor: pointer;
+}
+
+.subcat:hover {
+    background-color: rgb(128, 146, 146);
+}
+
+.modal {
+    width: auto;
+    height: auto;
+    padding: 2%;
+    cursor: pointer;
+}
