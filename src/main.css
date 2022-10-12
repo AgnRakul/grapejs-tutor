@@ -137,3 +137,9 @@
 .gjs-pn-btn.fa.fa-th-large {
     display: none;
 }
+
+.block-container {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 70%;
+}

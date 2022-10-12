@@ -94,7 +94,7 @@ const SideBar = ({ editor }) => {
                     }
                     {
                         isSelected && subBlockisSelected && <div className='sub-block-type'>
-                            <div draggable onDrag={() => onDragComponent()} id="block-container">
+                            <div className="block-container"draggable onDrag={() => onDragComponent()} id="block-container">
                            { RenderCustomBlock({bm: editor.BlockManager, selectedBlock:selectedBlock, selectedSubBlock: selectedSubBlock})}
                             </div>
                         </div>
