@@ -15,14 +15,9 @@ const Builder = () => {
         RenderCustomBlock(editor.BlockManager)
         RestrictTemplatesToOne(editor)
         CustomPositionTraitsForTemplates(editor)
-
     }, [])
 
-
-
-
-   
-
+    
     return (
 
 

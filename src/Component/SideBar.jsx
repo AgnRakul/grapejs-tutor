@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { BiMessageSquareAdd } from "react-icons/bi";
 import { blocks } from "../Blocks"
-
+import grapesjs from "grapesjs";
 
 
 const SideBar = ({ editor }) => {
 
-    
- 
+
+
     const [showBlock, setShowBlock] = useState(false);
     const [isSelected, setIsSelected] = useState(false)
     const [subBlockisSelected, setSubBlockIsSelected] = useState(false)
@@ -32,7 +32,7 @@ const SideBar = ({ editor }) => {
         return blocks.map((block) => {
             if (block.Category === selectedBlock) {
                 return block.SubCategory.map((subCategory, index) => {
-                    
+
                     return <div key={index} onMouseEnter={() => findSubBlockIsSelected(subCategory.id)} className={`subcat ${selectedSubBlock === subCategory.id && 'selected'}`}>{subCategory.label}</div>
                 })
             }
@@ -44,16 +44,20 @@ const SideBar = ({ editor }) => {
             if (block.Category === selectedBlock) {
                 return block.SubCategory.map((subCategory) => {
                     if (subCategory.id === selectedSubBlock) {
-                        return subCategory.modal.map((model, index) => { 
-                            
-                            return  <div draggable onDrag={() => onDragComponent()} id="block-container">
-                                </div>
+                        return subCategory.modal.map((model, index) => {
+
+                            return <div draggable onDrag={() => onDragComponent()} id="block-container">
+                                
+                            </div>
                         })
                     }
                 })
             }
         })
     }
+
+   
+    
 
     return (
         <div className='sidebar' id='panels-container'>
