@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { BiMessageSquareAdd } from "react-icons/bi";
-import { blocks } from "../../Blocks"
-import { Editor } from '../../editor';
+import { blocks } from "../Blocks"
 
-const SideBar = () => {
 
+
+const SideBar = ({ editor }) => {
+
+    
+ 
     const [showBlock, setShowBlock] = useState(false);
     const [isSelected, setIsSelected] = useState(false)
     const [subBlockisSelected, setSubBlockIsSelected] = useState(false)
     const [selectedBlock, setselectedBlock] = useState('')
     const [selectedSubBlock, setselectedSUbBlock] = useState('');
-    const [editor, setEditor] = useState(null);
-    
-    useEffect(() => {
-        const editor = Editor();
-        setEditor(editor)
-    }, []);
 
     const selectBlock = (blc) => {
         setIsSelected(true)
@@ -35,6 +32,7 @@ const SideBar = () => {
         return blocks.map((block) => {
             if (block.Category === selectedBlock) {
                 return block.SubCategory.map((subCategory, index) => {
+                    
                     return <div key={index} onMouseEnter={() => findSubBlockIsSelected(subCategory.id)} className={`subcat ${selectedSubBlock === subCategory.id && 'selected'}`}>{subCategory.label}</div>
                 })
             }
@@ -42,16 +40,14 @@ const SideBar = () => {
     }
 
     function displayModal() {
-
         return blocks.map((block) => {
             if (block.Category === selectedBlock) {
                 return block.SubCategory.map((subCategory) => {
                     if (subCategory.id === selectedSubBlock) {
-                        return subCategory.modal.map((model, index) => {
-                            return editor.BlockManager.add(model.id, {
-                                label: model.label,
-                                content: model.content,
-                            })
+                        return subCategory.modal.map((model, index) => { 
+                            
+                            return  <div draggable onDrag={() => onDragComponent()} id="block-container">
+                                </div>
                         })
                     }
                 })

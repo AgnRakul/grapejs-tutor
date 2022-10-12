@@ -1,3 +1,6 @@
+.editor-container {
+    display: flex;
+}
 .sidebar {
     position: relative;
     width: 20px;
@@ -15,7 +18,7 @@
     left: 99%;
     top: 6%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    /* z-index: -1; */
+    z-index: 10;
     background-color: wheat;
     width: 700px;
     height: 80%;
