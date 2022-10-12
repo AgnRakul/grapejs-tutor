@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiMessageSquareAdd } from "react-icons/bi";
 import { blocks } from "../Blocks"
 import grapesjs from "grapesjs";
+import { RenderCustomBlock } from '../Helper/renderCustomBlocks';
 
 
 const SideBar = ({ editor }) => {
@@ -24,6 +25,15 @@ const SideBar = ({ editor }) => {
         setselectedSUbBlock(subId)
     }
 
+    useEffect(() => {
+        if (subBlockisSelected) {
+            const blockContainer = editor.BlockManager.render();
+            const $ = editor.$;
+            $("#block-container").append(blockContainer)
+
+        }
+    }, [subBlockisSelected])
+
     const onDragComponent = () => {
         setShowBlock(false)
     }
@@ -32,32 +42,29 @@ const SideBar = ({ editor }) => {
         return blocks.map((block) => {
             if (block.Category === selectedBlock) {
                 return block.SubCategory.map((subCategory, index) => {
-
                     return <div key={index} onMouseEnter={() => findSubBlockIsSelected(subCategory.id)} className={`subcat ${selectedSubBlock === subCategory.id && 'selected'}`}>{subCategory.label}</div>
                 })
             }
         })
     }
 
-    function displayModal() {
-        return blocks.map((block) => {
-            if (block.Category === selectedBlock) {
-                return block.SubCategory.map((subCategory) => {
-                    if (subCategory.id === selectedSubBlock) {
-                        return subCategory.modal.map((model, index) => {
+    // function displayModal() {
+    //     return blocks.map((block) => {
+    //         if (block.Category === selectedBlock) {
+    //             return block.SubCategory.map((subCategory) => {
+    //                 if (subCategory.id === selectedSubBlock) {
+    //                     return subCategory.modal.map((model, index) => {
+    //                         console.log("Helli");
+    //                         return <div draggable onDrag={() => onDragComponent()} id="block-container">
 
-                            return <div draggable onDrag={() => onDragComponent()} id="block-container">
-                                
-                            </div>
-                        })
-                    }
-                })
-            }
-        })
-    }
+    //                         </div>
+    //                     })
+    //                 }
+    //             })
+    //         }
+    //     })
+    // }
 
-   
-    
 
     return (
         <div className='sidebar' id='panels-container'>
@@ -87,7 +94,9 @@ const SideBar = ({ editor }) => {
                     }
                     {
                         isSelected && subBlockisSelected && <div className='sub-block-type'>
-                            {displayModal()}
+                            <div draggable onDrag={() => onDragComponent()} id="block-container">
+                           { RenderCustomBlock({bm: editor.BlockManager, selectedBlock:selectedBlock, selectedSubBlock: selectedSubBlock})}
+                            </div>
                         </div>
 
                     }

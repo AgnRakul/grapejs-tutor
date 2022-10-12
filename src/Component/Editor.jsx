@@ -10,19 +10,31 @@ import { CustomPositionTraitsForTemplates } from '../Helper/renderCustomTraits'
 
 const Builder = () => {
 
+    const [editor, setEditor] = useState();
+
     useEffect(() => {
         const editor = Editor();
-        RenderCustomBlock(editor.BlockManager)
-        RestrictTemplatesToOne(editor)
-        CustomPositionTraitsForTemplates(editor)
-    }, [])
 
-    
+       
+        setEditor(editor);
+    }, []);
+
+    useEffect(() => {
+        if (editor) {
+           
+            RestrictTemplatesToOne(editor)
+            CustomPositionTraitsForTemplates(editor);
+        }
+    }, [editor])
+
+
+
+
+
     return (
 
-
         <div className='editor-container'>
-            <SideBar />
+            <SideBar editor={editor}/>
             <div id='grapesjs-container'>
 
             </div>
