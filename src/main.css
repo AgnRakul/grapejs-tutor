@@ -10,8 +10,8 @@
 }
 
 .menubar {
-
     position: absolute;
+    
     left: 99%;
     top: 6%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -75,6 +75,7 @@
 }
 
 .subcat {
+
     width: auto;
     height: auto;
     padding: 2%;
@@ -86,8 +87,10 @@
 }
 
 .modal {
+    background-color: beige;
     width: auto;
     height: auto;
+    margin: 2%;
     padding: 2%;
     cursor: pointer;
 }
