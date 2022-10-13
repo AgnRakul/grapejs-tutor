@@ -12,8 +12,8 @@ export const Editor =  () => grapesjs.init({
     styleManager: {
         appendTo: "#style-container"
     },
-    // traitManager: {
-    //     appendTo: "#traits-container"
-    // },
+    traitManager: {
+        appendTo: "#trait-container"
+    },
 })
 

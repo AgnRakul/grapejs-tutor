@@ -195,3 +195,22 @@
 }
 
 
+.custom_traits_settings {
+    position: relative;
+}
+
+
+.trait-container {
+    position: absolute;
+    left: 150px;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    /* top: 27%; */
+    /* top: 0; */
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    z-index: 10;
+    background-color: wheat;
+    width: 300px;
+    height: 404px;
+}

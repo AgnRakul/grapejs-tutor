@@ -10,7 +10,6 @@ const getAllComponents = (model, result = []) => {
 export const RestrictTemplatesToOne = (editor) => {
   editor.on("component:add", function (e) {
 
-    console.log(e);
 
     const GetAllComponentsFromCanvas = getAllComponents(
       editor.DomComponents.getWrapper()
@@ -32,7 +31,7 @@ export const RestrictTemplatesToOne = (editor) => {
   });
 
   editor.on("component:clone", function (e) {
-    console.log(e);
+   
     const GetAllComponentsFromCanvas = getAllComponents(
       editor.DomComponents.getWrapper()
     );
