@@ -1,46 +1,32 @@
-import React, { useState, useEffect } from 'react'
-import 'grapesjs/dist/css/grapes.min.css'
-
-import { Editor } from '../Editor'
-import SideBar from './SideBar'
-import { RenderCustomBlock } from '../Helper/renderCustomBlocks';
-import { RestrictTemplatesToOne } from '../Helper/actions'
-import { CustomPositionTraitsForTemplates } from '../Helper/renderCustomTraits'
-
+import React, { useState, useEffect } from "react";
+import "grapesjs/dist/css/grapes.min.css";
+import { TbFileExport } from "react-icons/tb";
+import { Editor } from "../Editor";
+import SideBar from "./SideBar";
+import { RestrictTemplatesToOne } from "../Helper/actions";
+import { CustomPositionTraitsForTemplates } from "../Helper/renderCustomTraits";
 
 const Builder = () => {
+  const [editor, setEditor] = useState();
 
-    const [editor, setEditor] = useState();
+  useEffect(() => {
+    const editor = Editor();
+    setEditor(editor);
+  }, []);
 
-    useEffect(() => {
-        const editor = Editor();
+  useEffect(() => {
+    if (editor) {
+      RestrictTemplatesToOne(editor);
+      CustomPositionTraitsForTemplates(editor);
+    }
+  }, [editor]);
 
-       
-        setEditor(editor);
-    }, []);
+  return (
+    <div className="editor-container">
+      <SideBar editor={editor} />
+      <div id="grapesjs-container"></div>
+    </div>
+  );
+};
 
-    useEffect(() => {
-        if (editor) {
-           
-            RestrictTemplatesToOne(editor)
-            CustomPositionTraitsForTemplates(editor);
-        }
-    }, [editor])
-
-
-
-
-
-    return (
-
-        <div className='editor-container'>
-            <SideBar editor={editor}/>
-            <div id='grapesjs-container'>
-
-            </div>
-        </div>
-
-    )
-}
-
-export default Builder
+export default Builder;

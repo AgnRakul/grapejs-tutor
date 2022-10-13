@@ -1,6 +1,7 @@
 .editor-container {
     display: flex;
 }
+
 .sidebar {
     position: relative;
     width: 20px;
@@ -12,16 +13,59 @@
 
 }
 
+.icons {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+
 .menubar {
     position: absolute;
-    
-    left: 99%;
+    left: 104%;
     top: 6%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     z-index: 10;
     background-color: wheat;
     width: 700px;
     height: 80%;
+}
+
+.layers {
+    position: absolute;
+    left: 104%;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    top: 18%;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    z-index: 10;
+    background-color: wheat;
+    width: 300px;
+    height: 57%;
+}
+
+
+.header-layer {
+
+    display: flex;
+    padding-left: 4%;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.gjs-layer {
+    font-weight: lighter;
+    text-align: left;
+    position: relative;
+    width: 272px;
+    background-color: rgba(0,0,0,.1);
+    font-size: .75rem;
+    display: grid;
+}
+
+.layers-text {
+    font-size: 20px;
 }
 
 .menubar-topbar {
@@ -30,14 +74,18 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 1px 9px 0px;
     align-items: center;
     height: 6%;
-     background-color: wheat;
+    background-color: wheat;
 }
 
 .blocks {
     display: flex;
     justify-content: space-around
 }
+
 .show {
+    display: none;
+}
+.showlayers {
     display: none;
 }
 
@@ -45,8 +93,9 @@
     background-color: white;
     padding: 2%;
     width: 60%;
-    height: 735px;   
+    height: 735px;
 }
+
 .blocklist-name {
     cursor: pointer;
 }
@@ -56,7 +105,7 @@
 }
 
 .sub-block-type {
- 
+
     padding: 2%;
     height: 735px;
     width: 100%;
@@ -98,9 +147,10 @@
     cursor: pointer;
 }
 
+/* 
 .gjs-one-bg {
     background-color: transparent;
-}
+} */
 
 .gjs-blocks-c {
     display: flex;
@@ -131,10 +181,10 @@
     margin: 10px 2.5% 5px;
     /* box-shadow: 0 1px 0 0 rgb(0 0 0 / 15%); */
     transition: all .2s ease 0s;
-    transition-property: box-shadow,color;
+    transition-property: box-shadow, color;
 }
 
-.gjs-pn-btn.fa.fa-th-large {
+.gjs-pn-btn.fa.fa-th-large , .gjs-pn-btn.fa.fa-bars{
     display: none;
 }
 
@@ -143,3 +193,5 @@
     overflow-x: hidden;
     height: 70%;
 }
+
+

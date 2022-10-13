@@ -5,6 +5,15 @@ export const Editor =  () => grapesjs.init({
     height: "100vh",
     blockManager:  {
         appendTo: "#block-container"
-    }
+    },
+    layerManager: {
+        appendTo: "#layer-container"
+    },
+    styleManager: {
+        appendTo: "#style-container"
+    },
+    // traitManager: {
+    //     appendTo: "#traits-container"
+    // },
 })
 
