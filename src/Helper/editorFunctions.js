@@ -1,5 +1,7 @@
 export const EditorFn = (editor) => {
+  
   editor.on("component:selected", function (component) {
+    
     const newTool = {
       icon: "fa fa-gear",
       title: "Settings",

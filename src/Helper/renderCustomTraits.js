@@ -1,8 +1,9 @@
 import { getPoistion } from "./positionTraits";
 
 export const CustomPositionTraitsForTemplates = (editor) => {
-  editor.DomComponents.addType("div", {
-    isComponent: (el) => el.tagName == "DIV",
+  editor.DomComponents.addType("Template-One", {
+    isComponent: (el) => el.id == "Template-One",
+
     model: {
       defaults: {
         traits: [
@@ -22,6 +23,7 @@ export const CustomPositionTraitsForTemplates = (editor) => {
               { id: "bottom-right", name: "BottomRight" },
               { id: "bottom-left", name: "BottomLeft" },
             ],
+            placeholder: "Select Position",
           },
         ],
       },

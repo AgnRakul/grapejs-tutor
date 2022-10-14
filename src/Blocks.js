@@ -207,65 +207,181 @@ export const blocks = [
             id: "Template-Two",
             label: `<div><img style="width: 100%; height: 100%;" src="https://images.template.net/629/freetrial-popup-2.jpg" alt="TemplateTwo"></div>`,
             content: `<style>
-                @import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,600,700,800');
-                .coupon-popup-sec { margin: 30px auto;color: #fff; padding: 0; width: 550px; position: relative;font-family: 'Montserrat', sans-serif;text-transform: uppercase;}
-                .coupon-popup-sec h1,h2,h3,h4,h5 {margin: 0;}
-                .coupon-popup-sec .coupon-content { margin: 0px; padding: 90px 0; float: left; width: 100%; box-sizing: border-box;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec1 {width: 38%;float: left; padding: 36.5px 0;box-sizing: border-box;text-align: center;background: #ff0000;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec2 {padding: 70px 0;background: #000;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec1 h2 {font-size: 68px;font-weight: 800;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec1 h3 {font-size: 29px;}
-                .coupon-popup-sec .coupon-content p {font-size: 17px;font-weight: 600;letter-spacing: 0.5px}
-                .coupon-popup-sec .coupon-content h4 {font-size: 25px;font-weight: 600;padding-bottom: 30px;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec1 h5 {font-size: 18px;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec2 .code-now-btn {cursor: pointer;font-size: 27px;text-transform: uppercase;font-weight: 600;color: #fff;margin: 0 0 10px 0;padding: 15px 25px; clear: both;border: 0px;background: #ff0000;font-family: 'Montserrat', sans-serif;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec2 .code-now-btn:hover { background: #00ae4d; }
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec2 .code-now-btn:focus, .coupon-popup-sec .coupon-cls-btn:focus { outline: none; }
-                .coupon-popup-sec .coupon-cls-btn { font-size: 14px; line-height: 18px; width: 28px; height: 28px; -webkit-border-radius: 50%; border-radius: 50%; background: #FFF; position: absolute; right: -14px; top: -14px; border: 0px; -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,0.27); box-shadow: 0 0 2px 0 rgba(0,0,0,0.27); cursor: pointer;}
-                .popup-graybox {position: fixed;width: 100%;top: 0;left: 0;height: 100vh;z-index: 99999;text-align: center;align-items: center;display: flex;box-sizing: border-box;overflow: auto;}
-                .coupon-popup-sec .coupon-cls-btn:hover {background: #ff0000;color: #fff;}
-                .coupon-popup-sec .coupon-content {background: #000;-webkit-box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.52);-moz-box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.52);box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.52);}
-                .coupon-popup-sec .coupon-content .main_content{width: 100%;float: left; margin-bottom: 30px;}
-                @media only screen and (max-width:640px) {
-                .coupon-popup-sec { width: 90%; }
-                }
-                @media only screen and (max-width:480px) {
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec1 h2 {font-size: 42px;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec1 h3 {font-size: 19px;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec1 h5 {font-size: 16px;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec2 .code-now-btn {font-size: 16px;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec2 {padding: 54px 0;}
-                .coupon-popup-sec .coupon-content {padding: 45px 0 30px 0;}
-                .coupon-popup-sec .coupon-content h4 {font-size: 18px;letter-spacing: 0.5px;}
-                }
-                @media only screen and (max-width:425px) {
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec1 {width: 45%;padding: 23.5px 0;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec2 {padding: 46px 0;}
-                .coupon-popup-sec .coupon-content p {font-size: 12px;}
-                .coupon-popup-sec .coupon-content h4 {font-size: 16px;padding-bottom: 15px;}
-                .coupon-popup-sec .coupon-content .coupon-brdr-sec2 .code-now-btn {font-size: 14px;letter-spacing: 0.5px;padding: 10px 15px;}
-                .coupon-popup-sec .coupon-content {padding: 30px 0 20px 0;}
-                }
-                </style>
-                </head>
-                <div id="Template-One" class="coupon-popup-sec" >
-                  <div class="coupon-content" style="background: #000 url(images/freetrial_popup.jpg) no-repeat top left;background-size: cover;">
-                    <h4>start a free trial now</h4>
-                      <div class="main_content">
-                         <div class="coupon-brdr-sec1">
-                          <h3 data-edit="text" >get 30%</h3>
-                           <h2 data-edit="text" >off</h2>
-                           <h5 data-edit="text" >on purchase</h5>
-                         </div>
-                         <div class="coupon-brdr-sec2">
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+            transition: ease 0.2s;
+            font-family: Open Sans;
+            text-decoration: none;
+            font-size: 14px;
+          }
+      
+          .template {
+            width: 100%;
+            max-width: 450px;
+        }
+          
+      
+          .container {
+            background: #f8faff;
+            color: #4b537c;
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: #dee8fe 0 10px 20px 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+          }
+      
+          .heading {
+            font-size: 18px;
+          }
+      
+          .para {
+            font-weight: 600;
+          }
+      
+          .feedback-level {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .level {
+            background: white;
+            padding: 13px;
+            border-radius: 7px;
+            border: solid 0.5px #e0e9fe;
+            cursor: pointer;
+          }
+          .level:hover {
+            box-shadow: #fe73a5 0 2px 5px;
+          }
+          .level:hover i {
+            color: #fe73a5;
+          }
+          .level i {
+            font-size: 40px;
+          }
+      
+          .feedback-msg textarea {
+            margin-top: 5px;
+            border: solid 2px #e0e9fe;
+            padding: 13px;
+            border-radius: 7px;
+            outline: none;
+            font-size: 14px;
+            color: #4b537c;
+            font-weight: 500;
+            letter-spacing: 1px;
+            width: 100%;
+            height: 80px;
+            resize: none;
+          }
+      
+          .agreement .checkbox {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            margin-bottom: 5px;
+          }
+          .agreement input {
+            accent-color: #ff71a4;
+          }
+          .agreement a {
+            color: #ff71a4;
+            font-size: 12px;
+            font-weight: 600;
+          }
+          .agreement label {
+            font-size: 12px;
+            font-weight: 600;
+          }
+      
+          .buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: end;
+          }
+          .buttons a {
+            background: white;
+            color: #4b537c;
+            width: 80px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 4px;
+          }
+          .buttons a:hover {
+            opacity: 0.9;
+          }
+          .buttons a:nth-child(1) {
+            background: #fe71a4;
+            color: #f8faff;
+          }
+          </style>
+          <div id="Template-One" class="template">
+      <link
+        rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+      />
 
-                           <button class="code-now-btn" data-edit="button" >get started</button>
-                         </div>
-                      </div>
-                    <button class="coupon-cls-btn close-btn" >X</button>
-                    <p>ready to start your 30 days free trial?</p>
-                  </div>
-                </div>`,
+      <form class="container">
+        <h1 class="heading">Give feedback</h1>
+        <p class="para">
+          What do you think of the issue search experience within the project?
+        </p>
+
+        <div class="feedback-level">
+          <div class="level">
+            <i class="lar la-sad-tear"></i>
+          </div>
+          <div class="level">
+            <i class="las la-frown"></i>
+          </div>
+          <div class="level">
+            <i class="lar la-meh"></i>
+          </div>
+          <div class="level">
+            <i class="lar la-smile"></i>
+          </div>
+          <div class="level">
+            <i class="lar la-grin"></i>
+          </div>
+        </div>
+
+        <div class="feedback-msg">
+          <p class="para">What are the main reasons for your rating?</p>
+          <textarea name="" id=""></textarea>
+        </div>
+
+        <div class="agreement">
+          <div class="checkbox">
+            <input type="checkbox" name="" id="" />
+            <label for=""
+              >I may be contacted about this feedback
+              <a href="#">Privacy Policy</a>.</label
+            >
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" name="" id="" />
+            <label for=""
+              >I'd like to help improve by joining the
+              <a href="#">Reasearch Group</a>.</label
+            >
+          </div>
+        </div>
+
+        <div class="buttons">
+          <a href="javascript:alert('Thanks for submiting your feedback')"
+            >Submit</a
+          >
+          <a href="You just cancelled your to submit the feedback">Cancel</a>
+        </div>
+      </form>
+    </div>`,
             category: "Templates",
             attributes: {
               title: "Template Two",

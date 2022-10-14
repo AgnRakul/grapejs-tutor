@@ -1,4 +1,8 @@
 export const getPoistion = (editor, position) => {
+
+
+  const $ = editor.$
+
   switch (position) {
     case "top-left": {
       editor.CssComposer.setRule(".top-left", {
@@ -6,6 +10,7 @@ export const getPoistion = (editor, position) => {
         left: 0,
         top: 0,
       });
+      $('.trait-container').css("left","150px")
       break;
     }
     case "top-right": {
@@ -14,6 +19,7 @@ export const getPoistion = (editor, position) => {
         right: 0,
         top: 0,
       });
+      $('.trait-container').css("left","-879px")
       break;
     }
     case "top-center": {
@@ -37,6 +43,7 @@ export const getPoistion = (editor, position) => {
         left: 0,
         top: "25%",
       });
+      $('.trait-container').css("left","150px")
       break;
     }
     case "center-right": {
@@ -45,6 +52,7 @@ export const getPoistion = (editor, position) => {
         right: 0,
         top: "25%",
       });
+      $('.trait-container').css("left","-879px")
       break;
     }
     case "bottom-center": {
@@ -61,6 +69,7 @@ export const getPoistion = (editor, position) => {
         right: 0,
         bottom: 0,
       });
+      $('.trait-container').css("left","-879px")
       break;
     }
     case "bottom-left": {
@@ -69,6 +78,7 @@ export const getPoistion = (editor, position) => {
         left: 0,
         bottom: 0,
       });
+      $('.trait-container').css("left","150px")
       break;
     }
     default: {

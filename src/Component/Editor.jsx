@@ -13,7 +13,7 @@ const Builder = () => {
   useEffect(() => {
     const editor = Editor();
 
-
+    editor.getComponents()
     setEditor(editor);
   }, []);
 
@@ -29,8 +29,10 @@ const Builder = () => {
   return (
     <div className="editor-container">
       <SideBar editor={editor} />
+
       <div id="grapesjs-container"></div>
     </div>
+
   );
 };
 

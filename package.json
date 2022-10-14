@@ -7,8 +7,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "grapesjs": "^0.20.1",
-    "grapesjs-blocks-basic": "^1.0.1",
-    "grapesjs-preset-webpage": "^1.0.2",
     "jquery": "^3.6.1",
     "juice": "^8.1.0",
     "lodash": "^4.17.21",
