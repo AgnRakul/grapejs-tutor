@@ -13,15 +13,16 @@ const Builder = () => {
   useEffect(() => {
     const editor = Editor();
 
-    editor.getComponents()
+    editor.getComponents();
+
     setEditor(editor);
   }, []);
 
   useEffect(() => {
     if (editor) {
       RestrictTemplatesToOne(editor);
-      EditorFn(editor)
-      CustomCommands(editor)
+      EditorFn(editor);
+      CustomCommands(editor);
       CustomPositionTraitsForTemplates(editor);
     }
   }, [editor]);
@@ -32,7 +33,6 @@ const Builder = () => {
 
       <div id="grapesjs-container"></div>
     </div>
-
   );
 };
 

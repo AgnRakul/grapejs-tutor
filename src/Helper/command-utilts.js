@@ -1,3 +1,5 @@
+import { dragElement } from "../Constant";
+
 export const CustomCommands = (editor) => {
   let EditorCmd = editor.Commands;
 
@@ -25,6 +27,8 @@ export const CustomCommands = (editor) => {
         const $ = editor.$;
         parentToolBar.append(customTraitsContainer);
         $("#trait-container").append(traitManager);
+
+        dragElement(document.getElementById("trait-container"));
       }
     },
   });
