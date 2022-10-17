@@ -5,7 +5,7 @@ export const CustomCommands = (editor) => {
 
   EditorCmd.add("tlb-settings", {
     run: (cmd) => {
-      if (!!document.getElementsByClassName("traitParent")) {
+      if (!!document.getElementById("traitParent")) {
         const element = document.getElementById("traitParent");
 
         if (element.style.display === "none") {
@@ -29,7 +29,7 @@ export const CustomCommands = (editor) => {
         TraitDrag.setAttribute("class", "traitParentheader");
         TraitDrag.innerHTML = "Click Here to Drag";
 
-        // Traint Container
+        // Trait Container
         let customTraitsContainer = document.createElement("div");
         customTraitsContainer.setAttribute("id", "trait-container");
         customTraitsContainer.setAttribute("class", "trait-container");
@@ -38,7 +38,7 @@ export const CustomCommands = (editor) => {
         TraitParent.appendChild(TraitDrag);
         TraitParent.appendChild(customTraitsContainer);
 
-        // Append Trait Parent to tlb-setting Parent
+        // Append Trait Parent to tlb-setting div
         parentToolBar.append(TraitParent);
         const traitManager = editor.TraitManager.render();
 
