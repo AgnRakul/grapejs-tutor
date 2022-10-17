@@ -2,7 +2,7 @@ import { getPoistion } from "./positionTraits";
 
 export const CustomPositionTraitsForTemplates = (editor) => {
   editor.DomComponents.addType("Template-One", {
-    isComponent: (el) => el.id == "Template-One",
+    isComponent: (el) => el.id === "Template-One",
 
     model: {
       defaults: {
@@ -51,7 +51,7 @@ export const CustomPositionTraitsForTemplates = (editor) => {
           if (classList.includes(val)) {
             this.removeClass(val);
           }
-          getPoistion(editor, position);
+          return getPoistion(editor, position);
         });
         const attributes = this.getAttributes();
         this.setClass(attributes.class + " " + position);

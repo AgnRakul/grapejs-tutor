@@ -1,6 +1,6 @@
 .editor-container {
     display: flex;
-   
+
 }
 
 .sidebar {
@@ -203,16 +203,27 @@
 }
 
 
-.trait-container {
+.traitParent {
     position: absolute;
     left: 150px;
     overflow: scroll;
     overflow-y: hidden;
-    cursor: move;
     overflow-x: hidden;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     z-index: 10;
     background-color: wheat;
     width: 300px;
     height: 404px;
+}
+
+.traitParentheader {
+    padding: 2%;
+    background-color: aqua;
+    cursor: move;
+}
+
+.ss:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

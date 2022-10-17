@@ -1,19 +1,16 @@
-import React, { useState } from 'react'
+import React from "react";
 
 const Layers = (props) => {
+  const { showLayers } = props;
 
-    const { showLayers } = props
+  return (
+    <div className={`layers ${!showLayers && "showlayers"}`}>
+      <div className="header-layer">
+        <p className="layers-text">Layers</p>
+        <div id="layer-container"></div>
+      </div>
+    </div>
+  );
+};
 
-    return (
-        <div className={`layers ${!showLayers && "showlayers"}`}>
-            <div className='header-layer'>
-                <p className='layers-text'>Layers</p>
-                <div id="layer-container">
-
-                </div>
-            </div>
-        </div>
-    )
-}
-
-export default Layers
+export default Layers;

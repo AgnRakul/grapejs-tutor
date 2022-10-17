@@ -5,8 +5,8 @@ export const CustomCommands = (editor) => {
 
   EditorCmd.add("tlb-settings", {
     run: (cmd) => {
-      if (!!document.getElementById("trait-container")) {
-        const element = document.getElementById("trait-container");
+      if (!!document.getElementsByClassName("traitParent")) {
+        const element = document.getElementById("traitParent");
 
         if (element.style.display === "none") {
           element.style.display = "block";
@@ -18,17 +18,35 @@ export const CustomCommands = (editor) => {
           document.getElementById("tlb-settings").parentElement;
         parentToolBar.setAttribute("class", "toolbar-parent");
 
+        // Trait Parent Container
+        let TraitParent = document.createElement("div");
+        TraitParent.setAttribute("id", "traitParent");
+        TraitParent.setAttribute("class", "traitParent");
+
+        // Container to Drag and Drop
+        let TraitDrag = document.createElement("div");
+        TraitDrag.setAttribute("id", "traitParentheader");
+        TraitDrag.setAttribute("class", "traitParentheader");
+        TraitDrag.innerHTML = "Click Here to Drag";
+
+        // Traint Container
         let customTraitsContainer = document.createElement("div");
         customTraitsContainer.setAttribute("id", "trait-container");
         customTraitsContainer.setAttribute("class", "trait-container");
 
+        // Append TraitDrag and Trait Container to Trait Parent
+        TraitParent.appendChild(TraitDrag);
+        TraitParent.appendChild(customTraitsContainer);
+
+        // Append Trait Parent to tlb-setting Parent
+        parentToolBar.append(TraitParent);
         const traitManager = editor.TraitManager.render();
 
+        // Append Trait Manager to Trait-Container Div
         const $ = editor.$;
-        parentToolBar.append(customTraitsContainer);
         $("#trait-container").append(traitManager);
 
-        dragElement(document.getElementById("trait-container"));
+        dragElement(document.getElementById("traitParent"));
       }
     },
   });

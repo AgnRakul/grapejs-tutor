@@ -13,7 +13,11 @@ const Builder = () => {
   useEffect(() => {
     const editor = Editor();
 
-    editor.getComponents();
+    editor.CssComposer.setRule(".gjs-dashed *[data-gjs-type='wrapper']", {
+      display: "flex",
+      "align-items": "center",
+      "justify-content": "center",
+    });
 
     setEditor(editor);
   }, []);

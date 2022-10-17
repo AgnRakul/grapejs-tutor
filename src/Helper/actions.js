@@ -9,8 +9,6 @@ const getAllComponents = (model, result = []) => {
 
 export const RestrictTemplatesToOne = (editor) => {
   editor.on("component:add", function (e) {
-
-
     const GetAllComponentsFromCanvas = getAllComponents(
       editor.DomComponents.getWrapper()
     );
@@ -19,31 +17,12 @@ export const RestrictTemplatesToOne = (editor) => {
       return blocks.map((item) => {
         return item.SubCategory.map((subItem) => {
           return subItem.modal.map((val) => {
-            if (canvas.ccid !== val.id && canvas.ccid.includes(val.id)) {
-              e.remove();
-              showToast("info", "Remove the Existing Templates");
-              return;
-            }
-          });
-        });
-      });
-    });
-  });
+            let RequiredConiditon =
+              canvas.ccid !== val.id && canvas.ccid.includes(val.id);
 
-  editor.on("component:clone", function (e) {
-   
-    const GetAllComponentsFromCanvas = getAllComponents(
-      editor.DomComponents.getWrapper()
-    );
-
-    GetAllComponentsFromCanvas.map((canvas) => {
-      return blocks.map((item) => {
-        return item.SubCategory.map((subItem) => {
-          return subItem.modal.map((val) => {
-            if (canvas.ccid !== val.id && canvas.ccid.includes(val.id)) {
-              e.remove();
+            if (RequiredConiditon) {
               showToast("info", "Remove the Existing Templates");
-              return;
+              return e.remove();
             }
           });
         });
