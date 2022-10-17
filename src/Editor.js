@@ -1,20 +1,20 @@
 import grapesjs from "grapesjs";
 
-export const Editor =  () => grapesjs.init({
+export const Editor = () =>
+  grapesjs.init({
     container: "#grapesjs-container",
     storageManager: false,
     height: "100vh",
-    blockManager:  {
-        appendTo: "#block-container"
+    blockManager: {
+      appendTo: "#block-container",
     },
     layerManager: {
-        appendTo: "#layer-container"
+      appendTo: "#layer-container",
     },
     // styleManager: {
     //     appendTo: "#trait-container"
     // },
     traitManager: {
-        appendTo: "#trait-container"
+      appendTo: "#trait-container",
     },
-})
-
+  });

@@ -10,3 +10,4 @@ const Traits = () => {
 };
 
 export default Traits;
+       

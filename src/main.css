@@ -200,11 +200,24 @@
 
 .custom_traits_settings {
     position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    width: auto;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    background-color: antiquewhite;
+}
+
+.toolbar-parent {
+    background-color: transparent;
+    /* height: 10%; */
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
 }
 
 
 .traitParent {
-    position: absolute;
+    position: fixed;
     left: 150px;
     overflow: scroll;
     overflow-y: hidden;
@@ -224,8 +237,17 @@
     color: #fff;
 }
 
-.ss:nth-child(2) {
-    display: flex;
+.gjs-toolbar {
+    position: absolute;
+    background-color: transparent;
+    white-space: nowrap;
+    color: rgb(0, 0, 0);
+    height: 10%;
+    border-radius: 10px;
     align-items: center;
-    justify-content: center;
+    display: flex;
+    width: auto;
+    z-index: 10;
+    top: -60px !important;
+    left: 278px !important;
 }

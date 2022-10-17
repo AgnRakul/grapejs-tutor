@@ -7,7 +7,7 @@ export const getPoistion = (editor, position) => {
         display: "flex",
         "align-items": "baseline",
       });
-      $(".traitParent").css("left", "150px");
+
       break;
     }
     case "top-center": {
@@ -24,7 +24,7 @@ export const getPoistion = (editor, position) => {
         "align-items": "start",
         "justify-content": "end",
       });
-      $(".traitParent").css("left", "-879px");
+
       break;
     }
 
@@ -33,7 +33,7 @@ export const getPoistion = (editor, position) => {
         display: "flex",
         "align-items": "center",
       });
-      $(".traitParent").css("left", "150px");
+
       break;
     }
     case "center": {
@@ -50,15 +50,16 @@ export const getPoistion = (editor, position) => {
         "align-items": "center",
         "justify-content": "end",
       });
-      $(".traitParent").css("left", "-879px");
+
       break;
     }
+
     case "bottom-left": {
       editor.CssComposer.setRule(".gjs-dashed *[data-gjs-type='wrapper']", {
         display: "flex",
         "align-items": "end",
       });
-      $(".traitParent").css("left", "150px");
+
       break;
     }
     case "bottom-center": {
@@ -75,7 +76,7 @@ export const getPoistion = (editor, position) => {
         "align-items": "end",
         "justify-content": "end",
       });
-      $(".traitParent").css("left", "-879px");
+
       break;
     }
     default: {
