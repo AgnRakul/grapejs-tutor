@@ -10,6 +10,14 @@ export const getPoistion = (editor, position) => {
       $(".traitParent").css("left", "150px");
       break;
     }
+    case "top-center": {
+      editor.CssComposer.setRule(".gjs-dashed *[data-gjs-type='wrapper']", {
+        display: "flex",
+        "align-items": "start",
+        "justify-content": "center",
+      });
+      break;
+    }
     case "top-right": {
       editor.CssComposer.setRule(".gjs-dashed *[data-gjs-type='wrapper']", {
         display: "flex",
@@ -19,12 +27,13 @@ export const getPoistion = (editor, position) => {
       $(".traitParent").css("left", "-879px");
       break;
     }
-    case "top-center": {
+
+    case "center-left": {
       editor.CssComposer.setRule(".gjs-dashed *[data-gjs-type='wrapper']", {
         display: "flex",
-        "align-items": "start",
-        "justify-content": "center",
+        "align-items": "center",
       });
+      $(".traitParent").css("left", "150px");
       break;
     }
     case "center": {
@@ -35,14 +44,6 @@ export const getPoistion = (editor, position) => {
       });
       break;
     }
-    case "center-left": {
-      editor.CssComposer.setRule(".gjs-dashed *[data-gjs-type='wrapper']", {
-        display: "flex",
-        "align-items": "center",
-      });
-      $(".traitParent").css("left", "150px");
-      break;
-    }
     case "center-right": {
       editor.CssComposer.setRule(".gjs-dashed *[data-gjs-type='wrapper']", {
         display: "flex",
@@ -50,6 +51,14 @@ export const getPoistion = (editor, position) => {
         "justify-content": "end",
       });
       $(".traitParent").css("left", "-879px");
+      break;
+    }
+    case "bottom-left": {
+      editor.CssComposer.setRule(".gjs-dashed *[data-gjs-type='wrapper']", {
+        display: "flex",
+        "align-items": "end",
+      });
+      $(".traitParent").css("left", "150px");
       break;
     }
     case "bottom-center": {
@@ -67,14 +76,6 @@ export const getPoistion = (editor, position) => {
         "justify-content": "end",
       });
       $(".traitParent").css("left", "-879px");
-      break;
-    }
-    case "bottom-left": {
-      editor.CssComposer.setRule(".gjs-dashed *[data-gjs-type='wrapper']", {
-        display: "flex",
-        "align-items": "end",
-      });
-      $(".traitParent").css("left", "150px");
       break;
     }
     default: {

@@ -217,9 +217,11 @@
 }
 
 .traitParentheader {
-    padding: 2%;
-    background-color: aqua;
+    padding: 10px;
     cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
 }
 
 .ss:nth-child(2) {

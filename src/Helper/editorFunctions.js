@@ -1,7 +1,5 @@
 export const EditorFn = (editor) => {
-  
   editor.on("component:selected", function (component) {
-    
     const newTool = {
       icon: "fa fa-gear",
       title: "Settings",
@@ -17,7 +15,11 @@ export const EditorFn = (editor) => {
     if (!checkAlreadyExist) {
       defaultToolbar.unshift({
         id: newTool.id,
-        attributes: { class: `${newTool.icon} custom_traits_settings`, title: newTool.title, id: newTool.id },
+        attributes: {
+          class: `${newTool.icon} custom_traits_settings`,
+          title: newTool.title,
+          id: newTool.id,
+        },
         command: newTool.commandName,
       });
       component.set("toolbar", defaultToolbar);
