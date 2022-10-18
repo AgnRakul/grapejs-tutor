@@ -11,9 +11,9 @@ export const Editor = () =>
     layerManager: {
       appendTo: "#layer-container",
     },
-    // styleManager: {
-    //     appendTo: "#trait-container"
-    // },
+    styleManager: {
+      appendTo: "#style-container",
+    },
     traitManager: {
       appendTo: "#trait-container",
     },

@@ -1,6 +1,7 @@
 import { dragElement } from "../Constant";
 import ReactDOMServer from "react-dom/server";
 import Traits from "../Component/Traits";
+import Styles from "../Component/Styles";
 
 export const CustomCommands = (editor) => {
   let EditorCmd = editor.Commands;
@@ -36,6 +37,41 @@ export const CustomCommands = (editor) => {
         $("#trait-container").append(traitManager);
 
         dragElement(document.getElementById("traitParent"));
+      }
+    },
+  });
+
+  EditorCmd.add("tlb-styles", {
+    run: (cmd) => {
+      if (!!document.getElementById("styleParent")) {
+        const element = document.getElementById("styleParent");
+
+        if (element.style.display === "none") {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      } else {
+        const parentToolBar =
+          document.getElementById("tlb-styles").parentElement;
+        parentToolBar.setAttribute("class", "toolbar-parent");
+
+        // Concept to Convert React Component to Normal HTML
+        const StylesContainer = ReactDOMServer.renderToStaticMarkup(<Styles />);
+
+        // Append Trait Parent to tlb-setting div
+        let StyleParent = document.createElement("div");
+        StyleParent.setAttribute("id", "styleParent");
+        StyleParent.setAttribute("class", "styleParent");
+        StyleParent.innerHTML = StylesContainer;
+
+        parentToolBar.append(StyleParent);
+        const styleManager = editor.StyleManager.render();
+        // Append Trait Manager to Trait-Container Div
+        const $ = editor.$;
+        $("#style-container").append(styleManager);
+
+        dragElement(document.getElementById("styleParent"));
       }
     },
   });

@@ -1,3 +1,18 @@
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 2px solid #555555;
+}
+
 .editor-container {
     display: flex;
 
@@ -25,7 +40,7 @@
     top: 6%;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     z-index: 10;
-    background-color: wheat;
+    background-color: white;
     width: 700px;
     height: 80%;
 }
@@ -39,7 +54,7 @@
     top: 18%;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     z-index: 10;
-    background-color: wheat;
+    background-color: white;
     width: 300px;
     height: 57%;
 }
@@ -74,7 +89,7 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 1px 9px 0px;
     align-items: center;
     height: 6%;
-    background-color: wheat;
+    background-color: white;
 }
 
 .blocks {
@@ -186,7 +201,9 @@
 }
 
 .gjs-pn-btn.fa.fa-th-large,
-.gjs-pn-btn.fa.fa-bars {
+.gjs-pn-btn.fa.fa-bars,
+.gjs-pn-btn.fa.fa-cog,
+.gjs-pn-btn.fa.fa-paint-brush {
     display: none;
 }
 
@@ -208,9 +225,9 @@
 
 .traitParent {
     position: fixed;
-    left: 1218px;
+    left: 1229px;
+    top: 268px;
     overflow: scroll;
-    overflow-y: hidden;
     overflow-x: hidden;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     z-index: 10;
@@ -219,7 +236,27 @@
     height: 323px;
 }
 
+.styleParent {
+    position: fixed;
+    left: 109px;
+    top: 261px;
+    overflow-y: scroll;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    z-index: 10;
+    background-color: white;
+    width: 379px;
+    height: 568px;
+}
+
 .traitParentheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+}
+
+.styleParentheader {
     padding: 10px;
     cursor: move;
     z-index: 10;
@@ -264,4 +301,90 @@
 .gjs-trt-traits option {
     background-color: white;
     color: #000;
+
+}
+
+.gjs-sm-properties option {
+    background-color: white;
+    color: #000;
+}
+
+.gjs-sm-properties input {
+    border: 0.5px solid rgba(0, 0, 0, 0.363);
+    background-color: white;
+    color: #000;
+
+}
+
+.gjs-sm-properties select {
+    border: 0.5px solid rgba(0, 0, 0, 0.363);
+    background-color: white;
+    color: #000;
+
+}
+
+.gjs-sm-properties label {
+    border: 0.2px solid rgba(0, 0, 0, 0.363);
+    background-color: white;
+    color: #000;
+
+}
+
+
+.gjs-sm-field.gjs-sm-stack {
+    border: 0.5px solid rgba(0, 0, 0, 0.363);
+    background-color: white;
+    color: #000;
+}
+
+.gjs-sm-layers.gjs-field {
+
+    background-color: white;
+    color: #000;
+}
+
+.gjs-sm-layers.gjs-field {
+
+    background-color: white;
+    color: #000;
+}
+
+.gjs-sm-sector-title {
+    background-color: white !important;
+    color: #000 !important;
+    border: none !important;
+}
+
+.gjs-sm-properties {
+    background-color: white !important;
+    color: #000 !important;
+}
+
+.gjs-blocks-cs {
+    background-color: white !important;
+}
+
+.gjs-pn-views {
+    display: none !important;
+}
+
+.gjs-field-arrows {
+    background-color: rgba(0, 0, 0, 0.39) !important;
+    position: absolute;
+    cursor: ns-resize;
+    margin: auto;
+    height: 26px;
+    width: 9px;
+    z-index: 10;
+    bottom: 0;
+    right: 1px;
+    top: 0;
+}
+
+.gjs-sm-sector.gjs-sm-open {
+    border: none
+}
+
+#gjs-sm-add {
+    color: #000 !important;
 }
