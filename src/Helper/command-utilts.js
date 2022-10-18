@@ -1,4 +1,6 @@
 import { dragElement } from "../Constant";
+import ReactDOMServer from "react-dom/server";
+import Traits from "../Component/Traits";
 
 export const CustomCommands = (editor) => {
   let EditorCmd = editor.Commands;
@@ -18,30 +20,17 @@ export const CustomCommands = (editor) => {
           document.getElementById("tlb-settings").parentElement;
         parentToolBar.setAttribute("class", "toolbar-parent");
 
-        // Trait Parent Container
+        // Concept to Convert React Component to Normal HTML
+        const TraitsContainer = ReactDOMServer.renderToStaticMarkup(<Traits />);
+
+        // Append Trait Parent to tlb-setting div
         let TraitParent = document.createElement("div");
         TraitParent.setAttribute("id", "traitParent");
         TraitParent.setAttribute("class", "traitParent");
+        TraitParent.innerHTML = TraitsContainer;
 
-        // Container to Drag and Drop
-        let TraitDrag = document.createElement("div");
-        TraitDrag.setAttribute("id", "traitParentheader");
-        TraitDrag.setAttribute("class", "traitParentheader");
-        TraitDrag.innerHTML = "Click Here to Drag";
-
-        // Trait Container
-        let customTraitsContainer = document.createElement("div");
-        customTraitsContainer.setAttribute("id", "trait-container");
-        customTraitsContainer.setAttribute("class", "trait-container");
-
-        // Append TraitDrag and Trait Container to Trait Parent
-        TraitParent.appendChild(TraitDrag);
-        TraitParent.appendChild(customTraitsContainer);
-
-        // Append Trait Parent to tlb-setting div
         parentToolBar.append(TraitParent);
         const traitManager = editor.TraitManager.render();
-
         // Append Trait Manager to Trait-Container Div
         const $ = editor.$;
         $("#trait-container").append(traitManager);

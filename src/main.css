@@ -8,10 +8,9 @@
     width: 20px;
     height: 100vh;
     padding: 20px;
-    background-color: antiquewhite;
+    background-color: white;
     display: flex;
     justify-content: center;
-
 }
 
 .icons {
@@ -198,15 +197,6 @@
 }
 
 
-.custom_traits_settings {
-    position: relative;
-    padding: 10px;
-    border-radius: 10px;
-    width: auto;
-    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
-    background-color: antiquewhite;
-}
-
 .toolbar-parent {
     background-color: transparent;
     /* height: 10%; */
@@ -218,15 +208,15 @@
 
 .traitParent {
     position: fixed;
-    left: 150px;
+    left: 1218px;
     overflow: scroll;
     overflow-y: hidden;
     overflow-x: hidden;
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     z-index: 10;
-    background-color: wheat;
-    width: 300px;
-    height: 404px;
+    background-color: white;
+    width: 215px;
+    height: 323px;
 }
 
 .traitParentheader {
@@ -242,12 +232,36 @@
     background-color: transparent;
     white-space: nowrap;
     color: rgb(0, 0, 0);
-    height: 10%;
     border-radius: 10px;
-    align-items: center;
-    display: flex;
-    width: auto;
     z-index: 10;
-    top: -60px !important;
-    left: 278px !important;
+    top: -51px !important;
+    /* left: 498px !important; */
+}
+
+.gjs-toolbar>div {
+    /* margin: 10%; */
+    gap: 10px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+}
+
+.gjs-toolbar-item {
+    background-color: #f0f0e5;
+    align-items: center !important;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.158);
+    justify-content: center !important;
+    display: flex !important;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+
+.gjs-trt-traits {
+    background-color: white !important;
+    color: #000 !important;
+}
+
+.gjs-trt-traits option {
+    background-color: white;
+    color: #000;
 }
