@@ -1,6 +1,4 @@
 export const getPoistion = (editor, position) => {
-  const $ = editor.$;
-
   switch (position) {
     case "top-left": {
       editor.CssComposer.setRule(".gjs-dashed *[data-gjs-type='wrapper']", {
