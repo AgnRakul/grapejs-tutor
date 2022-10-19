@@ -77,4 +77,13 @@ export const EditorFn = (editor) => {
       }
     }
   });
+
+  // editor.on("load", (component) => {
+  //   editor.Commands.add("undo", {
+  //     run(editor, sender) {
+  //       sender.set("active", 0);
+  //       editor.UndoManager.undo(1);
+  //     },
+  //   });
+  // });
 };

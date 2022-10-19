@@ -9,7 +9,7 @@ export const blocks = [
         modal: [
           {
             id: "theme_1",
-            label: `<h1>Add Heading<h1>`,
+            label: "<h1>Add Heading<h1>",
             content: "<h1>Add Heading<h1>",
           },
           {
@@ -46,24 +46,10 @@ export const blocks = [
           {
             id: "titles_1",
             label: `
-            <style>
-            @import url(https://fonts.googleapis.com/css?family=Bungee);
-            .Bungee {
-              font-family: 'Bungee';
-              font-size: 20px;
-            }
-            </style>
-            <p class="Bungee">Bungee Font<p>
+            <span style="font-family: Revalia; font-size: 20px">Bungee Font</span>
             `,
             content: `
-            <style>
-            @import url(https://fonts.googleapis.com/css?family=Bungee);
-            .Bungee {
-              font-family: 'Bungee';
-              font-size: 20px;
-            }
-            </style>
-            <p class="Bungee">Bungee Font<p>
+            <span style="font-family: Revalia; font-size: 20px">Bungee Font</span>
             `,
           },
           {
@@ -134,6 +120,23 @@ export const blocks = [
             </style>
             <p class="Lobster">Lobster Font<p>
             `,
+          },
+        ],
+      },
+      {
+        id: "paragraph-text",
+        label: "Paragraph Text",
+        modal: [
+          {
+            id: "para_1",
+            label: `<span
+            style="font-size: 14px; font-family: 'Courier New', Courier, monospace"
+            >Courier New</span
+          >`,
+            content: `<span
+            style="font-size: 14px; font-family: 'Courier New', Courier, monospace"
+            >Courier New</span
+          >`,
           },
         ],
       },

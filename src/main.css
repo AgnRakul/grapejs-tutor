@@ -1,16 +1,18 @@
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #F5F5F5;
+    width: 0px;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 0px;
     background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #000000;
     border: 2px solid #555555;
+    width: 0px;
 }
 
 .editor-container {
@@ -177,27 +179,29 @@
 }
 
 .gjs-block {
-    -webkit-user-select: none;
-    -o-user-select: none;
+
     user-select: none;
-    width: 45%;
-    min-width: 45px;
-    padding: 1em;
-    box-sizing: border-box;
-    min-height: 90px;
-    cursor: all-scroll;
+    width: 80%;
+    height: auto !important;
+    border: none;
+    cursor: grabbing;
+    background-color: transparent;
     font-size: 11px;
     font-weight: lighter;
+    color: #000;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* border: 1px solid rgba(0,0,0,.2); */
-    border-radius: 3px;
-    margin: 10px 2.5% 5px;
-    /* box-shadow: 0 1px 0 0 rgb(0 0 0 / 15%); */
-    transition: all .2s ease 0s;
-    transition-property: box-shadow, color;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.gjs-block-label {
+
+    width: auto !important;
+    height: auto !important;
+    padding: 0px !important;
 }
 
 .gjs-pn-btn.fa.fa-th-large,
@@ -210,7 +214,7 @@
 .block-container {
     overflow: scroll;
     overflow-x: hidden;
-    height: 70%;
+    height: 100%;
 }
 
 

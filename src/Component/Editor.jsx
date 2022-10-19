@@ -13,6 +13,7 @@ const Builder = () => {
 
   useEffect(() => {
     const editor = Editor();
+
     setEditor(editor);
   }, []);
 

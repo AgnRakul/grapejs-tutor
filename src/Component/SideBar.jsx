@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BiMessageSquareAdd, BiDevices } from "react-icons/bi";
-import { FiLayers, FiSettings } from "react-icons/fi";
-import { MdDraw } from "react-icons/md";
+import { FiLayers } from "react-icons/fi";
+import { AiOutlineTablet } from "react-icons/ai";
 import { blocks } from "../Blocks";
 import { RenderCustomBlock } from "../Helper/renderCustomBlocks";
 import { TbFileExport } from "react-icons/tb";
@@ -89,7 +89,7 @@ const SideBar = ({ editor }) => {
       />
       <TbFileExport style={iconStyles} onClick={() => exportCode()} />
       <FiLayers style={iconStyles} onClick={() => OpenLayersContainer()} />
-      <BiDevices style={iconStyles} />
+      <AiOutlineTablet style={iconStyles} />
       <div className={`menubar ${!showBlock && "show"} `}>
         <div className="menubar-topbar">
           <span>Add Element</span>
@@ -122,7 +122,6 @@ const SideBar = ({ editor }) => {
                 id="block-container"
               >
                 {RenderCustomBlock({
-                  editor: editor,
                   bm: editor.BlockManager,
                   selectedBlock: selectedBlock,
                   selectedSubBlock: selectedSubBlock,
