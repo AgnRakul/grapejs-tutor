@@ -1,4 +1,5 @@
 import grapesjs from "grapesjs";
+import { panels } from "./Utils/editor_utils";
 
 export const Editor = () =>
   grapesjs.init({
@@ -8,6 +9,10 @@ export const Editor = () =>
     blockManager: {
       appendTo: "#block-container",
     },
+    deviceManager: {
+      appendTo: "#panel__devices",
+    },
+    // panels: panels,
     layerManager: {
       appendTo: "#layer-container",
     },

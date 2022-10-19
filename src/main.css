@@ -16,14 +16,38 @@
 }
 
 .editor-container {
-    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
 
+.editor {
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    margin-left: 3%;
+    padding-left: 2%;
+    margin-right: 3%;
+    padding-right: 2%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-light {
+    background-color: #ffffff;
+    height: 50px;
+    box-shadow: 0px 15px 10px -15px rgba(17, 17, 17, 0.418);
+    display: flex;
+    justify-content: center;
 }
 
 .sidebar {
     position: relative;
     width: 20px;
     height: 100vh;
+
     padding: 20px;
     background-color: white;
     display: flex;

@@ -75,4 +75,18 @@ export const CustomCommands = (editor) => {
       }
     },
   });
+
+  // EditorCmd.add("undo", {
+  //   run: function (e, sender) {
+  //     // sender.set('active', 0);
+  //     e.UndoManager.undo();
+  //   },
+  // });
+
+  // EditorCmd.add("redo", {
+  //   run: function (e, sender) {
+  //     // sender.set('active', 0);
+  //     e.UndoManager.redo();
+  //   },
+  // });
 };
