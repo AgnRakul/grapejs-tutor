@@ -76,6 +76,24 @@ export const CustomCommands = (editor) => {
     },
   });
 
+  EditorCmd.add("set-device-desktop", {
+    run(editor) {
+      editor.setDevice("Desktop");
+    },
+  });
+
+  EditorCmd.add("set-device-tablet", {
+    run(editor) {
+      editor.setDevice("Tablet");
+    },
+  });
+
+  EditorCmd.add("set-device-mobile", {
+    run(editor) {
+      editor.setDevice("Mobile portrait");
+    },
+  });
+
   // EditorCmd.add("undo", {
   //   run: function (e, sender) {
   //     // sender.set('active', 0);

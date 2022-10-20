@@ -12,7 +12,6 @@ export const Editor = () =>
     deviceManager: {
       appendTo: "#panel__devices",
     },
-    // panels: panels,
     layerManager: {
       appendTo: "#layer-container",
     },
