@@ -509,8 +509,16 @@
 .panel__devices {
     display: flex;
     align-items: center;
-    width: 7%;
+    width: 10%;
 
+    justify-content: space-between;
+}
+
+.panel__redo__undo {
+    display: flex;
+    align-items: center;
+    width: 3%;
+    margin-left: 3%;
     justify-content: space-between;
 }
 

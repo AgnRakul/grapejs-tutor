@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CustomDeviceManager } from "../Utils/dataArray";
+import { ImUndo2, ImRedo2 } from "react-icons/im";
 
 const TopBar = ({ editor }) => {
   const [selectedDevice, setSelectedDevice] = useState("");
@@ -28,6 +29,7 @@ const TopBar = ({ editor }) => {
       <div className="container">
         <div className="editor-name">Popup Editor</div>
         <div id="panel__devices" className="panel__devices">
+          <span>Devices</span>
           {CustomDeviceManager.map((Device, index) => {
             return (
               <Device.content
@@ -42,6 +44,22 @@ const TopBar = ({ editor }) => {
               />
             );
           })}
+        </div>
+        <div className="panel__redo__undo">
+          <ImUndo2
+            style={{
+              width: "20px",
+              height: "40px",
+              cursor: "pointer",
+            }}
+          />
+          <ImRedo2
+            style={{
+              width: "20px",
+              height: "40px",
+              cursor: "pointer",
+            }}
+          />
         </div>
         <div className="panel__editor"></div>
         <div className="panel__basic-actions"></div>
