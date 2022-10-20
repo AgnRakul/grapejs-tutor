@@ -1,5 +1,4 @@
 import grapesjs from "grapesjs";
-import { panels } from "./Utils/editor_utils";
 
 export const Editor = () =>
   grapesjs.init({
