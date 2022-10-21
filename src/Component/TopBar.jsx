@@ -4,6 +4,7 @@ import { ImUndo2, ImRedo2 } from "react-icons/im";
 
 const TopBar = ({ editor }) => {
   const [selectedDevice, setSelectedDevice] = useState("");
+  const [triggeredAction, setTriggeredAction] = useState("");
 
   const SelectedDevice = (SelectedDevice) => {
     setSelectedDevice(SelectedDevice);
@@ -50,14 +51,24 @@ const TopBar = ({ editor }) => {
             style={{
               width: "20px",
               height: "40px",
+              color: triggeredAction === "undo" ? "blue" : "black",
               cursor: "pointer",
+            }}
+            onClick={() => {
+              editor.Commands.run("undo");
+              setTriggeredAction("undo");
             }}
           />
           <ImRedo2
             style={{
               width: "20px",
               height: "40px",
+              color: triggeredAction === "redo" ? "blue" : "black",
               cursor: "pointer",
+            }}
+            onClick={() => {
+              editor.Commands.run("redo");
+              setTriggeredAction("redo");
             }}
           />
         </div>

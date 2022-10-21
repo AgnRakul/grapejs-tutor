@@ -15,6 +15,7 @@ const Builder = () => {
 
   useEffect(() => {
     const editor = Editor();
+
     setEditor(editor);
   }, []);
 
@@ -25,10 +26,6 @@ const Builder = () => {
       CustomCssComposer(editor);
       CustomCommands(editor);
       CustomPositionTraitsForTemplates(editor);
-
-      // const device = editor.DeviceManager.render();
-      // const $ = editor.$;
-      // $("#panel__devices").append(device);
     }
   }, [editor]);
 
