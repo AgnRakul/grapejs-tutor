@@ -71,7 +71,6 @@ export const EditorFn = (editor) => {
       );
 
       if (checkAlreadyExist) {
-        console.log(checkAlreadyExist);
         defaultToolbar.splice(2, 1);
         component.set("toolbar", defaultToolbar);
       }
