@@ -22,8 +22,7 @@ export const RenderCustomBlock = (props) => {
     });
   });
 
-
-  // Array.prototype.flat Concept To Access 
+  // Array.prototype.flat Concept To Access Nested Array
   blocks.flat(3).map((modal) => {
     console.log(modal.Category);
   });
