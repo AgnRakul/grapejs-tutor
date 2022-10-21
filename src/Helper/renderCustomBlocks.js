@@ -21,4 +21,10 @@ export const RenderCustomBlock = (props) => {
       });
     });
   });
+
+
+  // Array.prototype.flat Concept To Access 
+  blocks.flat(3).map((modal) => {
+    console.log(modal.Category);
+  });
 };
