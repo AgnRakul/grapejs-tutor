@@ -9,6 +9,7 @@ import { CustomCommands } from "../Helper/command-utilts";
 import { CustomCssComposer } from "../Helper/cssComposer";
 import TopBar from "./TopBar";
 import PageManager from "./PageManager";
+import BrowserHeader from "./BrowserHeader";
 
 const Builder = () => {
   const [editor, setEditor] = useState();
@@ -34,9 +35,12 @@ const Builder = () => {
       <TopBar editor={editor} />
       <div className="editor">
         <SideBar editor={editor} />
-        <div id="grapesjs-container"></div>
+        <div className="editor-browser">
+          <BrowserHeader />
+          <div id="grapesjs-container"></div>
+        </div>
       </div>
-      <PageManager />
+      {/* <PageManager /> */}
     </div>
   );
 };
