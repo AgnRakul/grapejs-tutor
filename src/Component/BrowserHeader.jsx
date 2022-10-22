@@ -1,4 +1,7 @@
 import React from "react";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { MdOutlineRefresh } from "react-icons/md";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 const BrowserHeader = () => {
   return (
@@ -31,7 +34,41 @@ const BrowserHeader = () => {
           />
         </div>
       </div>
-      <div className="address-header"></div>
+      <div className="address-header">
+        <div className="actions-content">
+          <AiOutlineArrowLeft
+            style={{
+              width: "20px",
+              height: "40px",
+              cursor: "pointer",
+            }}
+          />
+          <AiOutlineArrowRight
+            style={{
+              width: "20px",
+              height: "40px",
+              cursor: "pointer",
+            }}
+          />
+          <MdOutlineRefresh
+            style={{
+              width: "20px",
+              height: "40px",
+              cursor: "pointer",
+            }}
+          />
+        </div>
+        <div className="input-container">
+          <i className="fa fa-eye"></i>
+          <input
+            type="url"
+            class="form-control"
+            placeholder="www.cartrabbit.io"
+            className="address-input"
+          />
+        </div>
+        <BsThreeDotsVertical />
+      </div>
     </div>
   );
 };
