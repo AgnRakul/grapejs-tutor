@@ -18,6 +18,7 @@
 .editor-container {
     width: 100vw;
     height: 100vh;
+    overflow-y: scroll;
     position: relative;
 }
 
@@ -62,6 +63,7 @@
 }
 
 .editor {
+    background-color: rgba(67, 65, 65, 0.549);
     display: flex;
 }
 
@@ -91,7 +93,7 @@
 .sidebar {
     position: relative;
     width: 20px;
-    height: 100vh;
+    /* height: 100vh !important; */
 
     padding: 20px;
     background-color: white;
@@ -213,8 +215,14 @@
 }
 
 .editor-browser {
+
     width: 100%;
-    /* padding: 0.5%; */
+    margin: 1%;
+}
+
+.gjs-hoverd {
+    border: none !important;
+    outline: none !important;
 }
 
 .Browser-Header {
@@ -332,6 +340,7 @@
 
 .gjs-dashed {
     background-color: #f0f0e5;
+
 }
 
 .gjs-cv-canvas {
@@ -341,7 +350,7 @@
     border: none !important;
     box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
     box-sizing: initial !important;
-    overflow: scroll;
+    overflow: hidden;
     top: 0;
 }
 
@@ -605,7 +614,7 @@
     outline: none;
 }
 
-/*   
- #grapesjs-container > div.gjs-editor.gjs-one-bg.gjs-two-color > div.gjs-cv-canvas
- 
- */
+#grapesjs-container {
+    height: 100%;
+    width: 100%;
+}
