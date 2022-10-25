@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Desktop",
+    "width": "",
+    "height": "",
+    "widthMedia": "",
+    "priority": 0,
+    "id": "desktop"
+  },
+  {
+    "name": "Tablet",
+    "width": "770px",
+    "height": "",
+    "widthMedia": "992px",
+    "priority": 992,
+    "id": "tablet"
+  },
+  {
+    "name": "Mobile landscape",
+    "width": "568px",
+    "height": "",
+    "widthMedia": "768px",
+    "priority": 768,
+    "id": "mobileLandscape"
+  }
+]

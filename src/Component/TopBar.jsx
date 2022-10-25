@@ -3,7 +3,7 @@ import { CustomDeviceManager } from "../Utils/dataArray";
 import { ImUndo2, ImRedo2 } from "react-icons/im";
 
 const TopBar = ({ editor }) => {
-  const [selectedDevice, setSelectedDevice] = useState("");
+  const [selectedDevice, setSelectedDevice] = useState("DESKTOP");
   const [triggeredAction, setTriggeredAction] = useState("");
 
   const SelectedDevice = (SelectedDevice) => {
@@ -12,14 +12,18 @@ const TopBar = ({ editor }) => {
     switch (SelectedDevice) {
       case "DESKTOP": {
         editor.Commands.run("set-device-desktop");
+
+        // document.getElementById("grapesjs-container").style.width = "100%";
         break;
       }
       case "TABLET": {
         editor.Commands.run("set-device-tablet");
+        // document.getElementById("grapesjs-container").style.width = "70%";
         break;
       }
       case "MOBILE": {
         editor.Commands.run("set-device-mobile");
+        // document.getElementById("grapesjs-container").style.width = "46%";
         break;
       }
     }
