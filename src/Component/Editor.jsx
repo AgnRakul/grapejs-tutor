@@ -6,13 +6,14 @@ import { RestrictTemplatesToOne } from "../Helper/actions";
 import { CustomPositionTraitsForTemplates } from "../Helper/renderCustomTraits";
 import { EditorFn } from "../Helper/editorFunctions.js";
 import { CustomCommands } from "../Helper/command-utilts";
+import { DeviceLayout } from "../Helper/DeviceLayout";
 import { CustomCssComposer } from "../Helper/cssComposer";
 import TopBar from "./TopBar";
-import PageManager from "./PageManager";
 import BrowserHeader from "./BrowserHeader";
 
 const Builder = () => {
   const [editor, setEditor] = useState();
+  const [findDevice, setFindDevice] = useState("desktop");
 
   useEffect(() => {
     const editor = Editor();
@@ -24,6 +25,7 @@ const Builder = () => {
     if (editor) {
       RestrictTemplatesToOne(editor);
       EditorFn(editor);
+      DeviceLayout({ editor, setFindDevice });
       CustomCssComposer(editor);
       CustomCommands(editor);
       CustomPositionTraitsForTemplates(editor);
@@ -36,7 +38,7 @@ const Builder = () => {
       <div className="editor">
         <SideBar editor={editor} />
         <div className="editor-browser">
-          <BrowserHeader />
+          {findDevice === "desktop" && <BrowserHeader />}
           <div id="grapesjs-container"></div>
         </div>
       </div>

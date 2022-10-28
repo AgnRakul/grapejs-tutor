@@ -3,7 +3,7 @@ import { CustomDeviceManager } from "../Utils/dataArray";
 import { ImUndo2, ImRedo2 } from "react-icons/im";
 
 const TopBar = ({ editor }) => {
-  const [selectedDevice, setSelectedDevice] = useState("");
+  const [selectedDevice, setSelectedDevice] = useState("DESKTOP");
   const [triggeredAction, setTriggeredAction] = useState("");
 
   const SelectedDevice = (SelectedDevice) => {
