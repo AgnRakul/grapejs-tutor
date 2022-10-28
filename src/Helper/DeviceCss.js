@@ -149,29 +149,28 @@ export const TabletCss = `.gjs-editor {
 }
 
 .gjs-cv-canvas {
-    width: 35%;
+    width: 30%;
     height: 100%;
     border-style: none !important;
     border: none !important;
     box-shadow: none;
-    left: 30%;
+    left: 34%;
     box-sizing: initial !important;
     overflow: hidden;
-    top: 0px;
-    background-image: url(https://raw.githubusercontent.com/RakulAgn/grapejs-tutor/b8831efad22bf56992d8ef3f092364fa9f7a7958/src/Assets/Svg/Tablet.svg);
+    top: 62px;
+    background-image: url(https://raw.githubusercontent.com/RakulAgn/grapejs-tutor/bd6dffb0bad13b86540db5d0ceb48a1b549a2c03/src/Assets/Svg/Tablet.svg);
     background-repeat: no-repeat;
     background-color: transparent;
 }
 
 .gjs-frame-wrapper {
-    left: 9px !important;
-    top: 77px !important;
-    width: 376px !important;
-    height: 85.6% !important;
+    left: -3px !important;
+    top: 30px !important;
+    width: 446px !important;
+    height: 63.6% !important;
     right: 0;
     margin: auto;
 }
-
 .gjs-cv-canvas__frames {
     background-color: transparent;
     position: absolute;
@@ -191,11 +190,11 @@ export const TabletCss = `.gjs-editor {
     width: 100%;
     background-color: grey;
     border: none;
-    border-radius: 44.54px !important;
+    border-radius: 2.54px !important;
     display: block;
     transition: width .35s ease, height .35s ease;
     position: absolute;
-    top: 6px;
+    top: 0px;
     bottom: 0;
     left: 2px;
     right: 0;
