@@ -158,7 +158,7 @@ export const TabletCss = `.gjs-editor {
     box-sizing: initial !important;
     overflow: hidden;
     top: 0px;
-    background-image: url(https://raw.githubusercontent.com/RakulAgn/grapejs-tutor/50de11264bcd49199715e27738de459a5a181329/src/Assets/Svg/Tablet.svg);
+    background-image: url(https://raw.githubusercontent.com/RakulAgn/grapejs-tutor/b8831efad22bf56992d8ef3f092364fa9f7a7958/src/Assets/Svg/Tablet.svg);
     background-repeat: no-repeat;
     background-color: transparent;
 }
