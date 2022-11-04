@@ -3,6 +3,7 @@ import grapesjs from "grapesjs";
 export const Editor = () =>
   grapesjs.init({
     container: "#grapesjs-container",
+    dragMode: "absolute",
     storageManager: false,
     height: "100vh",
     blockManager: {

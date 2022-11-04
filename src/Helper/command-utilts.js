@@ -107,7 +107,7 @@ export const CustomCommands = (editor) => {
       e.UndoManager.redo();
     },
   });
-  
+
   /*   
    defaultCommands['tlb-move'] = {
         run(ed, sender, opts = {}) {
